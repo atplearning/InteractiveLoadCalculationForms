@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card header">
+        <h1>Standard Calculation: One-Family Dwelling</h1>
+    </div>
+    <main class="card">
+        <h2>1. General Lighting and Receptacle Minimum Unit Load: <em>120.41</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <input type="number" id="1-area" />
+                        <span>sq ft &times; 2 VA =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-area-x-multi" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Small appliances: <em>120.52(A)</em></p>
+                <div class="row">
+                    <span>
+                        <input type="number" id="1-small-appliance" />
+                        <span>VA &times;</span>
+                        <input type="number" id="1-num-circuits" />
+                        <span>circuits =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-small-appliance-x-num-circuits" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Laundry: <em>120.52(B)</em></p>
+                <div class="row">
+                    <span>
+                        <input type="number" id="1-laundry" />
+                        <span>VA &times; 1 =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Applying Demand Dactors: <em>Table 120.45</em></p>
+                <div class="row">
+                    <span>
+                        <span class="w-short">First</span>
+                        <input type="number" id="1-first-va" />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="w-short">Next</span>
+                        <input type="number" id="1-next-va" />
+                        <span>VA &times; 35% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="w-short">Remaining</span>
+                        <input type="number" id="1-remaining-va" />
+                        <span>VA &times; 25% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>2. Fixed Appliances: <em>120.53</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Dishwasher</p>
+                        <span>=</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Disposer</p>
+                        <span>=</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Compactor</p>
+                        <span>=</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Water Heater</p>
+                        <span>=</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input type="text" id="2-fixed-appliances" />
+                        <span>=</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input type="text" id="2-fixed-appliances" />
+                        <span>=</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input type="text" id="2-fixed-appliances" />
+                        <span>=</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="bold w-long">Total</p>
+                        <span>&nbsp;&nbsp;</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA &times; 75% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Phases</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Neutral</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>3. Dryer: <em>120.54; Table 120.54</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <input type="text" id="2-fixed-appliances" />
+                        <span>VA &times;</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Phases</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA &times; 70% =</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Neutral</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>4. Cooking Equipment: <em>120.55</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span>Col A</span>
+                        <input type="text" id="2-fixed-appliances" />
+                        <span>VA &times;</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Col B</span>
+                        <input type="text" id="2-fixed-appliances" />
+                        <span>VA &times;</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Col C</span>
+                        <input type="text" id="2-fixed-appliances" />
+                        <span>VA &times;</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Phases</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA &times; 70% =</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Neutral</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>5. Heating and A/C: <em>120.6</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Heating unit =</p>
+                        <input type="number" id="2-fixed-appliances" />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">A/C unit =</p>
+                        <input type="number" id="2-fixed-appliances" />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Heat pump =</p>
+                        <input type="number" id="2-fixed-appliances" />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Largest Load</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Phases</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Neutral</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>6. Largest Motor: <em>120.50</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span>&Phi;</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA &times; 25% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Phases</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>N</span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA &times; 25% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                        <p class="column-header sr-only">Neutral</p>
+                        <input type="number" id="1-laundry-x-one" />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+    </main>
+</body>
+</html>

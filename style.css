@@ -1,0 +1,108 @@
+* {
+    margin: 0.25rem;
+    padding: 0;
+    box-sizing: border-box;
+    --w-text-input: 100px;
+    --w-number-input: 48px;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+h2:first-of-type {
+    border-top: none;
+}
+
+h2 em {
+    font-weight: normal;
+}
+
+hr {
+    margin: 2rem 0;
+}
+
+input[type="text"] {
+    width: var(--w-text-input);
+}
+
+input[type="number"] {
+    width: var(--w-number-input);
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+main {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+section {
+    margin: 0 1.75rem 0 1.75rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+    margin-block: 1rem;
+    padding: 0.5rem;
+}
+
+.column-header {
+    position: absolute;
+    text-align: center;
+    top: -2rem;
+}
+
+.header {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.row {
+    display: grid;
+    margin: 0 0 0 -0.75rem;
+    position: relative;
+    grid-template-columns: calc(3.25 * var(--w-text-input)) calc(2.75 * var(--w-number-input)) calc(3.5 * var(--w-number-input)) calc(2.125 * var(--w-number-input));
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.subsection {
+    font-weight: bold;
+    margin: 1rem 0 0 -0.25rem;
+}
+
+.subsection em {
+    font-weight: normal;
+}
+
+.w-long {
+    display: inline-block;
+    width: 100px;
+}
+
+.w-short {
+    display: inline-block;
+    width: 75px;
+}
