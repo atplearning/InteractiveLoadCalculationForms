@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../config.js"></script>
+    <script src="../versionData.js" defer></script>
+    <script src="oneFamilyStandardCalculation.js" defer></script>
+</head>
+<body>
+    <div class="card header">
+        <h1>Standard Calculation: One-Family Dwelling</h1>
+        <p id="code-year">based on the 2026 <em>National Electrical Code</em>®</p>
+    </div>
+    <main class="card">
+        <h2>1. General Lighting and Receptacle Minimum Unit Load: <em id="1-article-1">120.41</em></h2>
+        <section>
+            <div>
+                <p class="subsection">Dwelling Area:</p>
+                <div class="row">
+                    <span>
+                        <input type="number" id="1-area" aria-label="Dwelling Area" min="0" value="3000" />
+                        <span>sq ft &times; 2 VA =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-area-out" aria-label="Dwelling Area Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Small Appliances: <em id="1-article-2">120.52(A)</em></p>
+                <div class="row">
+                    <span>
+                        <input type="number" id="1-small-app-va" aria-label="Small Appliances Load" min="0" value="1500" />
+                        <span>VA &times;</span>
+                        <input type="number" id="1-small-app-circuits" aria-label="Small Appliances Circuits" min="0" value="3" />
+                        <span>circuits =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-small-app-out" aria-label="Small Appliances Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Laundry: <em id="1-article-3">120.52(B)</em></p>
+                <div class="row">
+                    <span>
+                        <input type="number" id="1-laundry-va" aria-label="Laundry Load" min="0" value="1500" />
+                        <span>VA &times; 1 =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-laundry-out" aria-label="Laundry Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Subtotal</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-subtotal-out" aria-label="Subtotal Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Applying Demand Dactors: <em id="1-article-4">Table 120.45</em></p>
+                <div class="row">
+                    <span>
+                        <span class="w-short">First</span>
+                        <input type="number" id="1-first-va" aria-label="First Load Portion" readonly />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-first-out" aria-label="First Load Portion Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="w-short">Next</span>
+                        <input type="number" id="1-next-va" aria-label="Next Load Portion" readonly />
+                        <span>VA &times; 35% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-next-out" aria-label="Next Load Portion Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="w-short">Remaining</span>
+                        <input type="number" id="1-remaining-va" aria-label="Remaining Load Portion" readonly />
+                        <span>VA &times; 25% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-remaining-out" aria-label="Remaining Load Portion Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input type="number" id="1-total-out" aria-label="Total Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="1-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="1-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>2. Fixed Appliances: <em id="2-article-1">120.53</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Dishwasher</p>
+                        <span>=</span>
+                        <input type="number" id="2-dishwasher-va" aria-label="Dishwasher Load" min="0" value="1650" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header-neutral">Neutral</p>
+                        <input type="checkbox" id="2-dishwasher-neutral" aria-label="Dishwasher Neutral" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Disposer</p>
+                        <span>=</span>
+                        <input type="number" id="2-disposer-va" aria-label="Disposer Load" min="0" value="950" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="2-disposer-neutral" aria-label="Disposer Neutral" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Compactor</p>
+                        <span>=</span>
+                        <input type="number" id="2-compactor-va" aria-label="Compactor Load" min="0" value="700" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="2-compactor-neutral" aria-label="Compactor Neutral" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Water Heater</p>
+                        <span>=</span>
+                        <input type="number" id="2-water-heater-va" aria-label="Water Heater Load" min="0" value="7500" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="2-water-heater-neutral" aria-label="Water Heater Neutral" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input type="text" id="2-cust-app-1-name" aria-label="Custom Appliance 1 Name" value="Attic Fan" />
+                        <span>=</span>
+                        <input type="number" id="2-cust-app-1-va" aria-label="Custom Appliance 1 Load" min="0" value="1400" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="2-cust-app-1-neutral" aria-label="Custom Appliance 1 Neutral" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input type="text" id="2-cust-app-2-name" aria-label="Custom Appliance 2 Name" />
+                        <span>=</span>
+                        <input type="number" id="2-cust-app-2-va" aria-label="Custom Appliance 2 Load" min="0" value="0" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="2-cust-app-2-neutral" aria-label="Custom Appliance 2 Neutral" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input type="text" id="2-cust-app-3-name" aria-label="Custom Appliance 3 Name" />
+                        <span>=</span>
+                        <input type="number" id="2-cust-app-3-va" aria-label="Custom Appliance 3 Load" min="0" value="0" />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="2-cust-app-3-neutral" aria-label="Custom Appliance 3 Neutral" />
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="bold w-long">&Phi; Total</p>
+                        <span>&nbsp;&nbsp;</span>
+                        <input type="number" id="2-total-phases-out" aria-label="Total Phases Load Output" readonly />
+                        <span>VA &times; 75% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-total-phases-75-out" aria-label="Total Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="bold w-long">N Total</p>
+                        <span>&nbsp;&nbsp;</span>
+                        <input type="number" id="2-total-neutral-out" aria-label="Total Neutral Load Output" readonly />
+                        <span>VA &times; 75% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="2-total-neutral-75-out" aria-label="Total Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="2-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="2-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>3. Dryer: <em id="3-article-1">120.54; Table 120.54</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <input type="number" id="3-dryer-va" aria-label="Dryer Load" min="0" value="5500" />
+                        <span>VA &times;</span>
+                        <input type="number" id="3-dryer-percent" aria-label="Dryer Load Percentage" min="0" value="100" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="3-dryer-out" aria-label="Dryer Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="3-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA &times; 70% =</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="3-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>4. Cooking Equipment: <em id="4-article-1">Table 120.55; Notes</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span>Col A</span>
+                        <input type="number" id="4-col-a-va" aria-label="Cooking Equipment Col A Load" min="0" value="0" />
+                        <span>VA &times;</span>
+                        <input type="number" id="4-col-a-num" aria-label="Cooking Equipment Col A Load Percentage" min="0" value="100" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="4-col-a-out" aria-label="Cooking Equipment Col A Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Col B</span>
+                        <input type="number" id="4-col-b-va" aria-label="Cooking Equipment Col B Load" min="0" value="8000" />
+                        <span>VA &times;</span>
+                        <input type="number" id="4-col-b-num" aria-label="Cooking Equipment Col B Load Percentage" min="0" value="115" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="4-col-b-out" aria-label="Cooking Equipment Col B Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Col C</span>
+                        <input type="number" id="4-col-c-va" aria-label="Cooking Equipment Col C Load" min="0" value="0" />
+                        <span>VA &times;</span>
+                        <input type="number" id="4-col-c-num" aria-label="Cooking Equipment Col C Load Percentage" min="0" value="100" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="4-col-c-out" aria-label="Cooking Equipment Col C Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input type="number" id="4-total-out" aria-label="Cooking Equipment Total Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="4-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA &times; 70% =</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="4-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>5. Heating and A/C: <em id="5-article-1">120.6</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Heating Unit =</p>
+                        <input type="number" id="5-heating-unit-va" aria-label="Heating Unit Load" min="0" value="16000" />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="5-heating-unit-out" aria-label="Heating Unit Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">A/C Unit =</p>
+                        <input type="number" id="5-ac-unit-va" aria-label="A/C Unit Load" min="0" value="12000" />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="5-ac-unit-out" aria-label="A/C Unit Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Heat Pump =</p>
+                        <input type="number" id="5-heat-pump-va" aria-label="Heat Pump Load" min="0" value="0" />
+                        <span>VA &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="5-heat-pump-out" aria-label="Heat Pump Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Largest Load</span>
+                    </span>
+                    <span>
+                        <input type="number" id="5-largest-load-va" aria-label="Largest Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="5-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="5-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>6. Largest Motor: <em id="6-article-1">120.50</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span aria-hidden="true">&Phi;</span>
+                        <span class="sr-only">Phases</span>
+                        <input type="number" id="6-phases-va" aria-label="Largest Motor Phases Load" min="0" value="1300" />
+                        <span>VA &times; 25% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="6-phases-va-out" aria-label="Largest Motor Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span aria-hidden="true">N</span>
+                        <span class="sr-only">Neutral</span>
+                        <input type="number" id="6-neutral-va" aria-label="Largest Motor Neutral Load" min="0" value="1300" />
+                        <span>VA &times; 25% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="6-neutral-va-out" aria-label="Largest Motor Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="6-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="6-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>1&Phi; Service:</h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span>Service Voltage =</span>
+                        <input type="number" id="7-service-voltage" aria-label="Service Voltage" min="1" value="240" />
+                        <span>V</span>
+                    </span>
+                    <span></span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input type="number" id="7-phases-out" aria-label="Total Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral</p>
+                        <input type="number" id="7-neutral-out" aria-label="Total Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Phases <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
+                        <input type="number" id="7-phases-va" aria-label="Total Phases Load" readonly />
+                        <span>VA &div;</span>
+                        <input type="number" id="7-phases-v" aria-label="Service Voltage" readonly />
+                        <span>V =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="7-phases-a-out" aria-label="Total Phases Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Neutral <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
+                        <input type="number" id="7-neutral-va" aria-label="Total Neutral Load" readonly />
+                        <span>VA &div;</span>
+                        <input type="number" id="7-neutral-v" aria-label="Service Voltage" readonly />
+                        <span>V =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="7-neutral-a-out" aria-label="Total Neutral Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <p class="subsection">Permitted Reductions: <em id="7-article-1">120.61(B)</em></p>
+                <div class="row">
+                    <span>
+                        <span class="w-short">First</span>
+                        <input type="number" id="7-first-va" aria-label="First Ampacity" readonly />
+                        <span>A &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="7-first-out" aria-label="First Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="w-short">Remaining</span>
+                        <input type="number" id="7-remaining-va" aria-label="Remaining Ampacity" readonly />
+                        <span>A &times; 70% =</span>
+                    </span>
+                    <span>
+                        <input type="number" id="7-remaining-out" aria-label="Remaining Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input type="number" id="7-total-out" aria-label="Total Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases&nbsp;Ampacity</p>
+                        <input type="number" id="7-phases-final-out" aria-label="Final Phases Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Neutral&nbsp;Ampacity</p>
+                        <input type="number" id="7-neutral-final-out" aria-label="Final Neutral Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-button-container">
+            <button id="calculate">Calculate</button>
+        </div>
+    </footer>
+</body>
+</html>
