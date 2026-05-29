@@ -1,12 +1,21 @@
 const vData = versionData.find(v => v.year === year);
 const el_code_year = document.getElementById("code-year");
 const el_main = document.querySelector("main");
-const el_1_area = document.getElementById("1-area");
-const el_1_area_out = document.getElementById("1-area-out");
+const el_1_area_1 = document.getElementById("1-area-1");
+const el_1_area_2 = document.getElementById("1-area-2");
+const el_1_area_3 = document.getElementById("1-area-3");
+const el_1_area_1_cnt = document.getElementById("1-area-1-cnt");
+const el_1_area_2_cnt = document.getElementById("1-area-2-cnt");
+const el_1_area_3_cnt = document.getElementById("1-area-3-cnt");
+const el_1_area_1_out = document.getElementById("1-area-1-out");
+const el_1_area_2_out = document.getElementById("1-area-2-out");
+const el_1_area_3_out = document.getElementById("1-area-3-out");
 const el_1_small_app_va = document.getElementById("1-small-app-va");
+const el_1_small_app_cnt = document.getElementById("1-small-app-cnt");
 const el_1_small_app_circuits = document.getElementById("1-small-app-circuits");
 const el_1_small_app_out = document.getElementById("1-small-app-out");
 const el_1_laundry_va = document.getElementById("1-laundry-va");
+const el_1_laundry_cnt = document.getElementById("1-laundry-cnt");
 const el_1_laundry_out = document.getElementById("1-laundry-out");
 const el_1_subtotal_out = document.getElementById("1-subtotal-out");
 const el_1_first_va = document.getElementById("1-first-va");
@@ -36,33 +45,42 @@ const el_2_cust_app_3_name = document.getElementById("2-cust-app-3-name");
 const el_2_cust_app_3_va = document.getElementById("2-cust-app-3-va");
 const el_2_cust_app_3_neutral = document.getElementById("2-cust-app-3-neutral");
 const el_2_total_phases_out = document.getElementById("2-total-phases-out");
+const el_2_total_phases_cnt = document.getElementById("2-total-phases-cnt");
 const el_2_total_phases_75_out = document.getElementById("2-total-phases-75-out");
 const el_2_total_neutral_out = document.getElementById("2-total-neutral-out");
+const el_2_total_neutral_cnt = document.getElementById("2-total-neutral-cnt");
 const el_2_total_neutral_75_out = document.getElementById("2-total-neutral-75-out");
 const el_2_phases_out = document.getElementById("2-phases-out");
 const el_2_neutral_out = document.getElementById("2-neutral-out");
 const el_3_dryer_va = document.getElementById("3-dryer-va");
+const el_3_dryer_cnt = document.getElementById("3-dryer-cnt");
 const el_3_dryer_percent = document.getElementById("3-dryer-percent");
 const el_3_dryer_out = document.getElementById("3-dryer-out");
 const el_3_phases_out = document.getElementById("3-phases-out");
 const el_3_neutral_out = document.getElementById("3-neutral-out");
 const el_4_col_a_va = document.getElementById("4-col-a-va");
+const el_4_col_a_cnt = document.getElementById("4-col-a-cnt");
 const el_4_col_a_num = document.getElementById("4-col-a-num");
 const el_4_col_a_out = document.getElementById("4-col-a-out");
 const el_4_col_b_va = document.getElementById("4-col-b-va");
+const el_4_col_b_cnt = document.getElementById("4-col-b-cnt");
 const el_4_col_b_num = document.getElementById("4-col-b-num");
 const el_4_col_b_out = document.getElementById("4-col-b-out");
 const el_4_col_c_va = document.getElementById("4-col-c-va");
+const el_4_col_c_cnt = document.getElementById("4-col-c-cnt");
 const el_4_col_c_num = document.getElementById("4-col-c-num");
 const el_4_col_c_out = document.getElementById("4-col-c-out");
 const el_4_total_out = document.getElementById("4-total-out");
 const el_4_phases_out = document.getElementById("4-phases-out");
 const el_4_neutral_out = document.getElementById("4-neutral-out");
 const el_5_heating_unit_va = document.getElementById("5-heating-unit-va");
+const el_5_heating_unit_cnt = document.getElementById("5-heating-unit-cnt");
 const el_5_heating_unit_out = document.getElementById("5-heating-unit-out");
 const el_5_ac_unit_va = document.getElementById("5-ac-unit-va");
+const el_5_ac_unit_cnt = document.getElementById("5-ac-unit-cnt");
 const el_5_ac_unit_out = document.getElementById("5-ac-unit-out");
 const el_5_heat_pump_va = document.getElementById("5-heat-pump-va");
+const el_5_heat_pump_cnt = document.getElementById("5-heat-pump-cnt");
 const el_5_heat_pump_out = document.getElementById("5-heat-pump-out");
 const el_5_largest_load_va = document.getElementById("5-largest-load-va");
 const el_5_phases_out = document.getElementById("5-phases-out");
@@ -92,10 +110,17 @@ const el_7_neutral_final_out = document.getElementById("7-neutral-final-out");
 const el_footer_button_container = document.querySelector(".footer-button-container");
 const el_calculate = document.getElementById("calculate");
 const elementsWithMinAttribute = [
-    el_1_area,
+    el_1_area_1,
+    el_1_area_2,
+    el_1_area_3,
+    el_1_area_1_cnt,
+    el_1_area_2_cnt,
+    el_1_area_3_cnt,
     el_1_small_app_va,
+    el_1_small_app_cnt,
     el_1_small_app_circuits,
     el_1_laundry_va,
+    el_1_laundry_cnt,
     el_2_dishwasher_va,
     el_2_disposer_va,
     el_2_compactor_va,
@@ -103,17 +128,26 @@ const elementsWithMinAttribute = [
     el_2_cust_app_1_va,
     el_2_cust_app_2_va,
     el_2_cust_app_3_va,
+    el_2_total_phases_cnt,
+    el_2_total_neutral_cnt,
     el_3_dryer_va,
+    el_3_dryer_cnt,
     el_3_dryer_percent,
     el_4_col_a_va,
+    el_4_col_a_cnt,
     el_4_col_a_num,
     el_4_col_b_va,
+    el_4_col_b_cnt,
     el_4_col_b_num,
     el_4_col_c_va,
+    el_4_col_c_cnt,
     el_4_col_c_num,
     el_5_heating_unit_va,
+    el_5_heating_unit_cnt,
     el_5_ac_unit_va,
+    el_5_ac_unit_cnt,
     el_5_heat_pump_va,
+    el_5_heat_pump_cnt,
     el_6_phases_va,
     el_6_neutral_va,
     el_7_service_voltage,
@@ -146,10 +180,12 @@ function runCalc() {
 
     el_code_year.innerHTML = `based on the ${vData.year} <em style="margin: 0 -0.25rem 0 0;">National Electrical Code</em><sup style="font-size: 0.7em;">®</sup>`;
 
-    el_1_area_out.value = parseInt(el_1_area.value) * vData.categories.generalLighting.areaMultiplier;
-    el_1_small_app_out.value = parseInt(el_1_small_app_va.value) * parseInt(el_1_small_app_circuits.value);
-    el_1_laundry_out.value = parseInt(el_1_laundry_va.value) * 1;
-    el_1_subtotal_out.value = parseInt(el_1_area_out.value) + parseInt(el_1_small_app_out.value) + parseInt(el_1_laundry_out.value);
+    el_1_area_1_out.value = parseInt(el_1_area_1.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_1_cnt.value);
+    el_1_area_2_out.value = parseInt(el_1_area_2.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_2_cnt.value);
+    el_1_area_3_out.value = parseInt(el_1_area_3.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_3_cnt.value);
+    el_1_small_app_out.value = parseInt(el_1_small_app_va.value) * parseInt(el_1_small_app_circuits.value) * parseInt(el_1_small_app_cnt.value);
+    el_1_laundry_out.value = parseInt(el_1_laundry_va.value) * 1 * parseInt(el_1_laundry_cnt.value);
+    el_1_subtotal_out.value = parseInt(el_1_area_1_out.value) + parseInt(el_1_small_app_out.value) + parseInt(el_1_laundry_out.value);
     el_1_first_va.value = Math.min(parseInt(el_1_subtotal_out.value), 3000);
     el_1_first_out.value = parseInt(el_1_first_va.value) * 1;
     el_1_next_va.value = Math.min(Math.max(parseInt(el_1_subtotal_out.value) - 3000, 0), 117000);
@@ -174,27 +210,27 @@ function runCalc() {
     let _2_total_neutral = _fixed_apps.filter(app => app.neutral).slice(0, 4).reduce((sum, app) => app.neutral ? (sum + app.value) : sum, 0);
 
     el_2_total_phases_out.value = _2_total_phases;
-    el_2_total_phases_75_out.value = Math.round(_2_total_phases * 0.75);
+    el_2_total_phases_75_out.value = Math.round(_2_total_phases * parseInt(el_2_total_phases_cnt.value) * 0.75);
     el_2_total_neutral_out.value = _2_total_neutral;
-    el_2_total_neutral_75_out.value = Math.round(_2_total_neutral * 0.75);
+    el_2_total_neutral_75_out.value = Math.round(_2_total_neutral * parseInt(el_2_total_neutral_cnt.value) * 0.75);
     el_2_phases_out.value = el_2_total_phases_75_out.value;
     el_2_neutral_out.value = el_2_total_neutral_75_out.value;
 
-    el_3_dryer_out.value = Math.round(parseInt(el_3_dryer_va.value) * parseInt(el_3_dryer_percent.value) / 100);
+    el_3_dryer_out.value = Math.round(parseInt(el_3_dryer_va.value) * parseInt(el_3_dryer_percent.value) / 100) * parseInt(el_3_dryer_cnt.value);
     el_3_phases_out.value = el_3_dryer_out.value;
     el_3_neutral_out.value = Math.round(el_3_dryer_out.value * 0.70);
 
-    el_4_col_a_out.value = Math.round(parseInt(el_4_col_a_va.value) * parseInt(el_4_col_a_num.value) / 100);
-    el_4_col_b_out.value = Math.round(parseInt(el_4_col_b_va.value) * parseInt(el_4_col_b_num.value) / 100);
-    el_4_col_c_out.value = Math.round(parseInt(el_4_col_c_va.value) * parseInt(el_4_col_c_num.value) / 100);
+    el_4_col_a_out.value = Math.round(parseInt(el_4_col_a_va.value) * parseInt(el_4_col_a_cnt.value) * parseInt(el_4_col_a_num.value) / 100);
+    el_4_col_b_out.value = Math.round(parseInt(el_4_col_b_va.value) * parseInt(el_4_col_b_cnt.value) * parseInt(el_4_col_b_num.value) / 100);
+    el_4_col_c_out.value = Math.round(parseInt(el_4_col_c_va.value) * parseInt(el_4_col_c_cnt.value) * parseInt(el_4_col_c_num.value) / 100);
     el_4_total_out.value = parseInt(el_4_col_a_out.value) + parseInt(el_4_col_b_out.value) + parseInt(el_4_col_c_out.value);
     el_4_phases_out.value = el_4_total_out.value;
     el_4_neutral_out.value = Math.round(el_4_total_out.value * 0.70);
 
-    el_5_heating_unit_out.value = parseInt(el_5_heating_unit_va.value);
-    el_5_ac_unit_out.value = parseInt(el_5_ac_unit_va.value);
-    el_5_heat_pump_out.value = parseInt(el_5_heat_pump_va.value);
-    el_5_largest_load_va.value = Math.max(parseInt(el_5_heating_unit_va.value), parseInt(el_5_ac_unit_va.value), parseInt(el_5_heat_pump_va.value));
+    el_5_heating_unit_out.value = parseInt(el_5_heating_unit_va.value) * parseInt(el_5_heating_unit_cnt.value);
+    el_5_ac_unit_out.value = parseInt(el_5_ac_unit_va.value) * parseInt(el_5_ac_unit_cnt.value);
+    el_5_heat_pump_out.value = parseInt(el_5_heat_pump_va.value) * parseInt(el_5_heat_pump_cnt.value);
+    el_5_largest_load_va.value = Math.max(parseInt(el_5_heating_unit_out.value), parseInt(el_5_ac_unit_out.value), parseInt(el_5_heat_pump_out.value));
     el_5_phases_out.value = parseInt(el_5_largest_load_va.value);
     el_5_neutral_out.value = 0;
 
