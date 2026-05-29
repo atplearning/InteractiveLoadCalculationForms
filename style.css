@@ -149,6 +149,10 @@ section {
     margin: 1rem 0 0 -0.25rem;
 }
 
+.sm-right-align {
+    margin-left: -4rem;
+}
+
 .subsection em {
     font-weight: normal;
 }
@@ -183,5 +187,9 @@ section {
     
     .row {
         grid-template-columns: calc(3.25 * var(--w-text-input)) calc(2.8 * var(--w-number-input)) calc(2.8 * var(--w-number-input)) calc(1.8 * var(--w-number-input));
+    }
+
+    .sm-right-align {
+        margin-left: 0.25rem;
     }
 }
