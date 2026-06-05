@@ -1,7 +1,7 @@
 :root {
     --w-text-input: 104px;
     --w-number-input: 64px;
-    --col-one-multi: 3.25;
+    --col-one-multi: 3.425;
 }
 
 * {
@@ -49,6 +49,7 @@ input[type="text"] {
 input[type="number"] {
     width: var(--w-number-input);
     -moz-appearance: textfield;
+    text-align: right;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -106,6 +107,10 @@ section {
     top: -1rem;
 }
 
+.divided-by {
+    margin: 0;
+}
+
 .footer-button-container {
     display: flex;
     justify-content: flex-end;
@@ -129,12 +134,22 @@ section {
     width: 100%;
 }
 
-.multifamily {
-    --col-one-multi: 4.2;
+.overline {
+    display: inline-block;
+    border-top: 1px solid currentColor;
+    padding: 0.5rem 0 0 0;
+}
+
+.overline-radical {
+    display: inline-block;
+    border-top: 1px solid currentColor;
+    width: 0.75em;
+    margin: 0;
+    padding: 0 0 0 0.125em;
 }
 
 .row {
-    align-items: center;
+    align-items: flex-end;
     display: grid;
     grid-template-columns: calc(var(--col-one-multi) * var(--w-text-input)) calc(2.75 * var(--w-number-input));
     min-height: 35px;

@@ -1,0 +1,231 @@
+const sqrt3 = Math.sqrt(3);
+const vData = versionData.find(v => v.year === year);
+const el_code_year = document.getElementById("code-year");
+const el_main = document.querySelector("main");
+const el_1_heating_unit = document.getElementById("1-heating-unit");
+const el_1_heating_unit_cnt = document.getElementById("1-heating-unit-cnt");
+const el_1_heating_unit_out = document.getElementById("1-heating-unit-out");
+const el_1_ac_unit = document.getElementById("1-ac-unit");
+const el_1_ac_unit_cnt = document.getElementById("1-ac-unit-cnt");
+const el_1_ac_unit_out = document.getElementById("1-ac-unit-out");
+const el_1_heat_pump = document.getElementById("1-heat-pump");
+const el_1_heat_pump_cnt = document.getElementById("1-heat-pump-cnt");
+const el_1_heat_pump_out = document.getElementById("1-heat-pump-out");
+const el_1_largest_load_out = document.getElementById("1-largest-load-out");
+const el_1_phases_out = document.getElementById("1-phases-out");
+
+const el_2_general_lighting_1_va = document.getElementById("2-general-lighting-1-va");
+const el_2_general_lighting_1_sqft = document.getElementById("2-general-lighting-1-sqft");
+const el_2_general_lighting_1_cnt = document.getElementById("2-general-lighting-1-cnt");
+const el_2_general_lighting_1_out = document.getElementById("2-general-lighting-1-out");
+const el_2_general_lighting_2_va = document.getElementById("2-general-lighting-2-va");
+const el_2_general_lighting_2_sqft = document.getElementById("2-general-lighting-2-sqft");
+const el_2_general_lighting_2_cnt = document.getElementById("2-general-lighting-2-cnt");
+const el_2_general_lighting_2_out = document.getElementById("2-general-lighting-2-out");
+const el_2_general_lighting_3_va = document.getElementById("2-general-lighting-3-va");
+const el_2_general_lighting_3_sqft = document.getElementById("2-general-lighting-3-sqft");
+const el_2_general_lighting_3_cnt = document.getElementById("2-general-lighting-3-cnt");
+const el_2_general_lighting_3_out = document.getElementById("2-general-lighting-3-out");
+const el_2_general_lighting_4_va = document.getElementById("2-general-lighting-4-va");
+const el_2_general_lighting_4_sqft = document.getElementById("2-general-lighting-4-sqft");
+const el_2_general_lighting_4_cnt = document.getElementById("2-general-lighting-4-cnt");
+const el_2_general_lighting_4_out = document.getElementById("2-general-lighting-4-out");
+const el_2_general_lighting_total_out = document.getElementById("2-general-lighting-total-out");
+const el_2_small_app_va = document.getElementById("2-small-app-va");
+const el_2_small_app_circuits = document.getElementById("2-small-app-circuits");
+const el_2_small_app_cnt = document.getElementById("2-small-app-cnt");
+const el_2_small_app_out = document.getElementById("2-small-app-out");
+const el_2_dishwasher_va = document.getElementById("2-dishwasher-va");
+const el_2_disposer_va = document.getElementById("2-disposer-va");
+const el_2_compactor_va = document.getElementById("2-compactor-va");
+const el_2_water_heater_va = document.getElementById("2-water-heater-va");
+const el_2_cust_app_1_va = document.getElementById("2-cust-app-1-va");
+const el_2_cust_app_2_va = document.getElementById("2-cust-app-2-va");
+const el_2_cust_app_3_va = document.getElementById("2-cust-app-3-va");
+const el_2_special_va = document.getElementById("2-special-va");
+const el_2_special_cnt = document.getElementById("2-special-cnt");
+const el_2_special_out = document.getElementById("2-special-out");
+const el_2_total_out = document.getElementById("2-total-out");
+const el_2_phases_out = document.getElementById("2-phases-out");
+
+const el_3_first_va = document.getElementById("3-first-va");
+const el_3_first_portion = document.getElementById("3-first-portion");
+const el_3_subtotal_connected_out = document.getElementById("3-subtotal-connected-out");
+const el_3_phases_1_va = document.getElementById("3-phases-1-va");
+const el_3_phases_2_va = document.getElementById("3-phases-2-va");
+const el_3_total_out = document.getElementById("3-total-out");
+const el_3_total_connected_out = document.getElementById("3-total-connected-out");
+const el_3_phases_out = document.getElementById("3-phases-out");
+
+const el_4_gen_va = document.getElementById("4-gen-va");
+const el_4_fixed_app_va = document.getElementById("4-fixed-app-va");
+const el_4_dryer_va = document.getElementById("4-dryer-va");
+const el_4_cooking_va = document.getElementById("4-cooking-va");
+const el_4_compactor_va = document.getElementById("4-compactor-va");
+const el_4_water_heater_va = document.getElementById("4-water-heater-va");
+const el_4_total_out = document.getElementById("4-total-out");
+const el_4_neutral_out = document.getElementById("4-neutral-out");
+
+const el_5_service_voltage = document.getElementById("5-service-voltage");
+const el_5_phases_va = document.getElementById("5-phases-va");
+const el_5_phases_v = document.getElementById("5-phases-v");
+const el_5_phases_a_out = document.getElementById("5-phases-a-out");
+const el_5_neutral_va = document.getElementById("5-neutral-va");
+const el_5_neutral_v = document.getElementById("5-neutral-v");
+const el_5_neutral_a_out = document.getElementById("5-neutral-a-out");
+const el_5_phases_final_out = document.getElementById("5-phases-final-out");
+const el_5_neutral_final_out = document.getElementById("5-neutral-final-out");
+const el_5_phases_sqrt3 = document.getElementById("5-phases-sqrt3");
+const el_5_neutral_sqrt3 = document.getElementById("5-neutral-sqrt3");
+const el_5_first_va = document.getElementById("5-first-va");
+const el_5_first_out = document.getElementById("5-first-out");
+const el_5_remaining_va = document.getElementById("5-remaining-va");
+const el_5_remaining_out = document.getElementById("5-remaining-out");
+const el_5_total_out = document.getElementById("5-total-out");
+const el_footer_button_container = document.querySelector(".footer-button-container");
+const el_calculate = document.getElementById("calculate");
+const elementsWithMinAttribute = [
+    el_1_heating_unit,
+    el_1_heating_unit_cnt,
+    el_1_ac_unit,
+    el_1_ac_unit_cnt,
+    el_1_heat_pump,
+    el_1_heat_pump_cnt,
+    el_2_general_lighting_1_va,
+    el_2_general_lighting_1_cnt,
+    el_2_general_lighting_2_va,
+    el_2_general_lighting_2_cnt,
+    el_2_general_lighting_3_va,
+    el_2_general_lighting_3_cnt,
+    el_2_general_lighting_4_va,
+    el_2_general_lighting_4_cnt,
+    el_2_small_app_va,
+    el_2_small_app_circuits,
+    el_2_dishwasher_va,
+    el_2_disposer_va,
+    el_2_compactor_va,
+    el_2_water_heater_va,
+    el_2_cust_app_1_va,
+    el_2_cust_app_2_va,
+    el_2_cust_app_3_va,
+    el_2_special_cnt,
+    el_3_first_portion,
+    el_4_gen_va,
+    el_4_fixed_app_va,
+    el_4_dryer_va,
+    el_4_cooking_va,
+    el_4_compactor_va,
+    el_4_water_heater_va,
+    el_5_service_voltage
+];
+
+/**
+ * Match the width of the footer button container to the width of the main content area.
+ */
+function resizeFooterWidth() {
+    const width = el_main.getBoundingClientRect().width;
+    el_footer_button_container.style.width = width + 'px';
+}
+
+/**
+ * Run the calculation based on the input values and update the output fields accordingly.
+ * This function is called immediately to initialize the output fields.
+ */
+function runCalc() {
+    if (!vData) {
+        el_code_year.innerHTML = `<em style="color: red;">Error: invalid code year provided (year: ${year})</em>`;
+        return;
+    }
+
+    /* Ensure all inputs with a min attribute have a value that is at least the min value */
+    elementsWithMinAttribute.forEach(el => {
+        if (el.value === '' || parseInt(el.value) < parseInt(el.min)) {
+            el.value = el.min;
+        }
+    });
+
+    el_code_year.innerHTML = `based on the ${vData.year} <em style="margin: 0 -0.25rem 0 0;">National Electrical Code</em><sup style="font-size: 0.7em;">®</sup>`;
+
+    el_1_heating_unit_out.value = parseInt(el_1_heating_unit.value) * parseInt(el_1_heating_unit_cnt.value);
+    el_1_ac_unit_out.value = parseInt(el_1_ac_unit.value) * parseInt(el_1_ac_unit_cnt.value);
+    el_1_heat_pump_out.value = parseInt(el_1_heat_pump.value) * parseInt(el_1_heat_pump_cnt.value);
+    el_1_largest_load_out.value = Math.max(parseInt(el_1_heating_unit_out.value), parseInt(el_1_ac_unit_out.value), parseInt(el_1_heat_pump_out.value));
+    el_1_phases_out.value = parseInt(el_1_largest_load_out.value);
+
+    const _sqft_multiplier = `sq ft &times; ${vData.categories.generalLighting.areaMultiplier} VA =`;
+    el_2_general_lighting_1_sqft.innerHTML = _sqft_multiplier;
+    el_2_general_lighting_2_sqft.innerHTML = _sqft_multiplier;
+    el_2_general_lighting_3_sqft.innerHTML = _sqft_multiplier;
+    el_2_general_lighting_4_sqft.innerHTML = _sqft_multiplier;
+
+    el_2_general_lighting_1_out.value = parseInt(el_2_general_lighting_1_va.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_2_general_lighting_1_cnt.value);
+    el_2_general_lighting_2_out.value = parseInt(el_2_general_lighting_2_va.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_2_general_lighting_2_cnt.value);
+    el_2_general_lighting_3_out.value = parseInt(el_2_general_lighting_3_va.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_2_general_lighting_3_cnt.value);
+    el_2_general_lighting_4_out.value = parseInt(el_2_general_lighting_4_va.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_2_general_lighting_4_cnt.value);
+
+    el_2_general_lighting_total_out.value = parseInt(el_2_general_lighting_1_out.value) + parseInt(el_2_general_lighting_2_out.value) + parseInt(el_2_general_lighting_3_out.value) + parseInt(el_2_general_lighting_4_out.value);
+
+    el_2_small_app_out.value = parseInt(el_2_small_app_va.value) * parseInt(el_2_small_app_circuits.value) * parseInt(el_2_small_app_cnt.value);
+
+    const _fixed_apps = [
+        parseInt(el_2_dishwasher_va.value),
+        parseInt(el_2_disposer_va.value),
+        parseInt(el_2_compactor_va.value),
+        parseInt(el_2_water_heater_va.value),
+        parseInt(el_2_cust_app_1_va.value),
+        parseInt(el_2_cust_app_2_va.value),
+        parseInt(el_2_cust_app_3_va.value),
+    ].sort((a, b) => a - b);
+
+    el_2_special_va.value = _fixed_apps.reduce((sum, app) => sum + app, 0);
+    el_2_special_out.value = parseInt(el_2_special_va.value) * parseInt(el_2_special_cnt.value);
+    el_2_total_out.value = parseInt(el_2_general_lighting_total_out.value) + parseInt(el_2_special_out.value) + parseInt(el_2_small_app_out.value);
+    el_2_phases_out.value = parseInt(el_2_total_out.value);
+
+    el_3_phases_1_va.value = el_1_phases_out.value;
+    el_3_phases_2_va.value = el_2_phases_out.value;
+    el_3_subtotal_connected_out.value = parseInt(el_3_phases_1_va.value) + parseInt(el_3_phases_2_va.value);
+    
+    el_3_first_va.value = el_3_subtotal_connected_out.value;
+    el_3_total_connected_out.value = Math.round(parseInt(el_3_first_va.value) * parseInt(el_3_first_portion.value) / 100);
+    el_3_phases_out.value = el_3_total_connected_out.value;
+
+
+    el_4_total_out.value = parseInt(el_4_gen_va.value) + parseInt(el_4_fixed_app_va.value) + parseInt(el_4_dryer_va.value) + parseInt(el_4_cooking_va.value) + parseInt(el_4_compactor_va.value) + parseInt(el_4_water_heater_va.value);
+    el_4_neutral_out.value = el_4_total_out.value;
+
+    el_5_service_voltage.value = el_5_service_voltage.value >= 1 ? el_5_service_voltage.value : 1;
+    const selectedServicePhase = document.querySelector('input[name="5-service-phase"]:checked');
+    const servicePhase = selectedServicePhase ? parseInt(selectedServicePhase.value) : 1;
+    const phaseCurrentDivisor = servicePhase === 3 ? sqrt3 : 1;
+    el_5_phases_va.value = el_3_phases_out.value;
+    el_5_phases_v.value = el_5_service_voltage.value;
+    el_5_phases_a_out.value = (parseInt(el_5_phases_va.value) / (parseInt(el_5_phases_v.value) * phaseCurrentDivisor)).toFixed(1);
+    el_5_neutral_va.value = el_4_neutral_out.value;
+    el_5_neutral_v.value = el_5_service_voltage.value;
+    el_5_neutral_a_out.value = (parseInt(el_5_neutral_va.value) / (parseInt(el_5_neutral_v.value) * phaseCurrentDivisor)).toFixed(1);
+    
+    el_5_first_va.value = Math.min(parseFloat(el_5_neutral_a_out.value), 200).toFixed(1);
+    el_5_first_out.value = (parseFloat(el_5_first_va.value) * 1).toFixed(1);
+    el_5_remaining_va.value = Math.max(parseFloat(el_5_neutral_a_out.value) - 200, 0).toFixed(1);
+    el_5_remaining_out.value = (parseFloat(el_5_remaining_va.value) * 0.25).toFixed(1);
+    el_5_total_out.value = (parseFloat(el_5_first_out.value) + parseFloat(el_5_remaining_out.value)).toFixed(1);
+
+    el_5_phases_final_out.value = el_5_phases_a_out.value;
+    el_5_neutral_final_out.value = el_5_total_out.value;
+
+    if (servicePhase === 1) {
+        el_5_phases_sqrt3.style.display = "none";
+        el_5_neutral_sqrt3.style.display = "none";
+    }
+    else {
+        el_5_phases_sqrt3.style.display = "inline";
+        el_5_neutral_sqrt3.style.display = "inline";
+    }
+};
+
+window.addEventListener("resize", resizeFooterWidth);
+el_calculate.addEventListener("click", runCalc);
+
+resizeFooterWidth();
+runCalc();

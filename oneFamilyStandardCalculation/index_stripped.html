@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Standard Calculation: One-Family Dwelling</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../config.js"></script>
     <script src="../versionData.js" defer></script>
@@ -62,7 +62,7 @@
                         <span>VA</span>
                     </span>
                 </div>
-                <p class="subsection">Applying Demand Dactors: <em id="1-article-4">Table 120.45</em></p>
+                <p class="subsection">Applying Demand Factors: <em id="1-article-4">Table 120.45</em></p>
                 <div class="row">
                     <span>
                         <span class="w-short">First</span>
@@ -450,12 +450,21 @@
                     </span>
                 </div>
                 <div class="row">
-                    <span>
+                    <span style="align-items: center; display: flex;">
                         <span>Phases <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
-                        <input type="number" id="7-phases-va" aria-label="Total Phases Load" readonly />
-                        <span>VA &div;</span>
-                        <input type="number" id="7-phases-v" aria-label="Service Voltage" readonly />
-                        <span>V =</span>
+                        <span style="display: flex; flex-direction: column;">
+                            <span>
+                                <input type="number" id="7-phases-va" aria-label="Total Phases Load" readonly />
+                                <span>VA</span>
+                            </span>
+                            <hr class="divided-by" aria-hidden="true">
+                            <span class="sr-only">divided by</span>
+                            <span>
+                                <input type="number" id="7-phases-v" aria-label="Service Voltage" readonly />
+                                <span>V</span>
+                            </span>
+                        </span>
+                        <span>=</span>
                     </span>
                     <span>
                         <input type="number" id="7-phases-a-out" aria-label="Total Phases Ampacity Output" readonly />
@@ -463,12 +472,21 @@
                     </span>
                 </div>
                 <div class="row">
-                    <span>
+                    <span style="align-items: center; display: flex;">
                         <span>Neutral <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
-                        <input type="number" id="7-neutral-va" aria-label="Total Neutral Load" readonly />
-                        <span>VA &div;</span>
-                        <input type="number" id="7-neutral-v" aria-label="Service Voltage" readonly />
-                        <span>V =</span>
+                        <span style="display: flex; flex-direction: column;">
+                            <span>
+                                <input type="number" id="7-neutral-va" aria-label="Total Neutral Load" readonly />
+                                <span>VA</span>
+                            </span>
+                            <hr class="divided-by" aria-hidden="true">
+                            <span class="sr-only">divided by</span>
+                            <span>
+                                <input type="number" id="7-neutral-v" aria-label="Service Voltage" readonly />
+                                <span>V</span>
+                            </span>
+                        </span>
+                        <span>=</span>
                     </span>
                     <span>
                         <input type="number" id="7-neutral-a-out" aria-label="Total Neutral Ampacity Output" readonly />
@@ -498,7 +516,7 @@
                         <span>A</span>
                     </span>
                 </div>
-                <div class="row">
+                <div class="row" aria-live="polite">
                     <span>
                         <span class="bold">Total</span>
                     </span>

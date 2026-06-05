@@ -1,3 +1,4 @@
+const sqrt3 = Math.sqrt(3);
 const vData = versionData.find(v => v.year === year);
 const el_code_year = document.getElementById("code-year");
 const el_main = document.querySelector("main");
@@ -92,6 +93,7 @@ const el_6_neutral_va = document.getElementById("6-neutral-va");
 const el_6_neutral_va_out = document.getElementById("6-neutral-va-out");
 const el_6_neutral_out = document.getElementById("6-neutral-out");
 const el_7_service_voltage = document.getElementById("7-service-voltage");
+const el_7_service_phase_options = document.querySelectorAll('input[name="7-service-phase"]');
 const el_7_phases_va = document.getElementById("7-phases-va");
 const el_7_phases_v = document.getElementById("7-phases-v");
 const el_7_phases_a_out = document.getElementById("7-phases-a-out");
@@ -107,6 +109,8 @@ const el_7_phases_out = document.getElementById("7-phases-out");
 const el_7_neutral_out = document.getElementById("7-neutral-out");
 const el_7_phases_final_out = document.getElementById("7-phases-final-out");
 const el_7_neutral_final_out = document.getElementById("7-neutral-final-out");
+const el_7_phases_sqrt3 = document.getElementById("7-phases-sqrt3");
+const el_7_neutral_sqrt3 = document.getElementById("7-neutral-sqrt3");
 const el_footer_button_container = document.querySelector(".footer-button-container");
 const el_calculate = document.getElementById("calculate");
 const elementsWithMinAttribute = [
@@ -240,14 +244,17 @@ function runCalc() {
     el_6_neutral_out.value = el_6_neutral_va_out.value;
 
     el_7_service_voltage.value = el_7_service_voltage.value >= 1 ? el_7_service_voltage.value : 1;
+    const selectedServicePhase = document.querySelector('input[name="7-service-phase"]:checked');
+    const servicePhase = selectedServicePhase ? parseInt(selectedServicePhase.value) : 1;
+    const phaseCurrentDivisor = servicePhase === 3 ? sqrt3 : 1;
     el_7_phases_out.value = parseInt(el_1_phases_out.value) + parseInt(el_2_phases_out.value) + parseInt(el_3_phases_out.value) + parseInt(el_4_phases_out.value) + parseInt(el_5_phases_out.value) + parseInt(el_6_phases_out.value);
     el_7_neutral_out.value = parseInt(el_1_neutral_out.value) + parseInt(el_2_neutral_out.value) + parseInt(el_3_neutral_out.value) + parseInt(el_4_neutral_out.value) + parseInt(el_5_neutral_out.value) + parseInt(el_6_neutral_out.value);
     el_7_phases_va.value = parseInt(el_1_phases_out.value) + parseInt(el_2_phases_out.value) + parseInt(el_3_phases_out.value) + parseInt(el_4_phases_out.value) + parseInt(el_5_phases_out.value) + parseInt(el_6_phases_out.value);
     el_7_phases_v.value = el_7_service_voltage.value;
-    el_7_phases_a_out.value = (parseInt(el_7_phases_va.value) / parseInt(el_7_phases_v.value)).toFixed(1);
+    el_7_phases_a_out.value = (parseInt(el_7_phases_va.value) / (parseInt(el_7_phases_v.value) * phaseCurrentDivisor)).toFixed(1);
     el_7_neutral_va.value = parseInt(el_1_neutral_out.value) + parseInt(el_2_neutral_out.value) + parseInt(el_3_neutral_out.value) + parseInt(el_4_neutral_out.value) + parseInt(el_5_neutral_out.value) + parseInt(el_6_neutral_out.value);
     el_7_neutral_v.value = el_7_service_voltage.value;
-    el_7_neutral_a_out.value = (parseInt(el_7_neutral_va.value) / parseInt(el_7_neutral_v.value)).toFixed(1);
+    el_7_neutral_a_out.value = (parseInt(el_7_neutral_va.value) / (parseInt(el_7_neutral_v.value) * phaseCurrentDivisor)).toFixed(1);
     el_7_first_va.value = Math.min(parseFloat(el_7_neutral_a_out.value), 200).toFixed(1);
     el_7_first_out.value = (parseFloat(el_7_first_va.value) * 1).toFixed(1);
     el_7_remaining_va.value = Math.max(parseFloat(el_7_neutral_a_out.value) - 200, 0).toFixed(1);
@@ -255,6 +262,15 @@ function runCalc() {
     el_7_total_out.value = (parseFloat(el_7_first_out.value) + parseFloat(el_7_remaining_out.value)).toFixed(1);
     el_7_phases_final_out.value = el_7_phases_a_out.value;
     el_7_neutral_final_out.value = el_7_total_out.value;
+
+    if (servicePhase === 1) {
+        el_7_phases_sqrt3.style.display = "none";
+        el_7_neutral_sqrt3.style.display = "none";
+    }
+    else {
+        el_7_phases_sqrt3.style.display = "inline";
+        el_7_neutral_sqrt3.style.display = "inline";
+    }
 };
 
 window.addEventListener("resize", resizeFooterWidth);

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Calculation: Multifamily Dwelling</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../config.js"></script>
+    <script src="../versionData.js" defer></script>
+    <script src="multifamilyOptionalCalculation.js" defer></script>
+</head>
+<body>
+    <div class="card header">
+        <h1>Optional Calculation: Multifamily Dwelling</h1>
+        <p id="code-year"></p>
+    </div>
+    <main class="card">
+        <h2>1. Heating or A/C: <em id="1-article-1">120.84(C)(5)</em></h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span>Heating Units</span>
+                        <br><input autocomplete="off" type="number" id="1-heating-unit" aria-label="Heating Units Load" min="0" value="4200" />
+                        <span>VA &times; 100% &times;</span>
+                        <input autocomplete="off" type="number" id="1-heating-unit-cnt" aria-label="Heating Unit Count" min="0" value="1" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="1-heating-unit-out" aria-label="Heating Units Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>A/C Unit</span>
+                        <br><input autocomplete="off" type="number" id="1-ac-unit" aria-label="A/C Unit Load" min="0" value="5300" />
+                        <span>VA &times; 100% &times;</span>
+                        <input autocomplete="off" type="number" id="1-ac-unit-cnt" aria-label="A/C Unit Count" min="0" value="2" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="1-ac-unit-out" aria-label="A/C Unit Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Heat Pump</span>
+                        <br><input autocomplete="off" type="number" id="1-heat-pump" aria-label="Heat Pump Load" min="0" value="6400" />
+                        <span>VA &times; 100% &times;</span>
+                        <input autocomplete="off" type="number" id="1-heat-pump-cnt" aria-label="Heat Pump Count" min="0" value="3" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="1-heat-pump-out" aria-label="Heat Pump Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Largest Load</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="1-largest-load-out" aria-label="Largest Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input autocomplete="off" type="number" id="1-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>2. General Loads: <em id="2-article-1">120.84(C)</em></h2>
+        <section>
+            <div>
+                <p class="subsection">General Lighting: <em id="5-article-1">120.84(C)(1)</em></p>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-1-va" aria-label="General Lighting Load" min="0" value="975" />
+                        <span id="2-general-lighting-1-sqft">sq ft &times; 2 VA &times;</span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-1-cnt" aria-label="General Lighting Count" min="0" value="7" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-1-out" aria-label="General Lighting Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-2-va" aria-label="General Lighting Load" min="0" value="0" />
+                        <span id="2-general-lighting-2-sqft">sq ft &times; 2 VA &times;</span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-2-cnt" aria-label="General Lighting Count" min="0" value="0" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-2-out" aria-label="General Lighting Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-3-va" aria-label="General Lighting Load" min="0" value="0" />
+                        <span id="2-general-lighting-3-sqft">sq ft &times; 2 VA &times;</span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-3-cnt" aria-label="General Lighting Count" min="0" value="0" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-3-out" aria-label="General Lighting Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-4-va" aria-label="General Lighting Load" min="0" value="0" />
+                        <span id="2-general-lighting-4-sqft">sq ft &times; 2 VA &times;</span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-4-cnt" aria-label="General Lighting Count" min="0" value="0" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-4-out" aria-label="General Lighting Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">General Lighting Total</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-general-lighting-total-out" aria-label="General Lighting Total Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Small Appliance and Laundry Loads: <em id="5-article-1">120.84(C)(2)</em></p>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="number" id="2-small-app-va" aria-label="Small Appliance and Laundry Load" min="0" value="1500" />
+                        <span>VA &times;</span>
+                        <input autocomplete="off" type="number" id="2-small-app-circuits" aria-label="Small Appliance and Laundry Circuits" min="0" value="3" />
+                        <span>circuits</span>
+                        <br><span>&times;</span>
+                        <input autocomplete="off" type="number" id="2-small-app-cnt" aria-label="Small Appliance and Laundry Circuit Count" min="0" value="7" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-small-app-out" aria-label="Small Appliance and Laundry Loads Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Special Loads: <em id="5-article-1">120.84(C)(3)</em></p>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Dishwasher</p>
+                        <span>=</span>
+                        <input autocomplete="off" type="number" id="2-dishwasher-va" aria-label="Dishwasher Load" min="0" value="950" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Disposer</p>
+                        <span>=</span>
+                        <input autocomplete="off" type="number" id="2-disposer-va" aria-label="Disposer Load" min="0" value="5000" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Compactor</p>
+                        <span>=</span>
+                        <input autocomplete="off" type="number" id="2-compactor-va" aria-label="Compactor Load" min="0" value="12000" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <p class="w-long">Water Heater</p>
+                        <span>=</span>
+                        <input autocomplete="off" type="number" id="2-water-heater-va" aria-label="Water Heater Load" min="0" value="0" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="text" id="2-cust-app-1-name" aria-label="Custom Appliance 1 Name" value="Range" />
+                        <span>=</span>
+                        <input autocomplete="off" type="number" id="2-cust-app-1-va" aria-label="Custom Appliance 1 Load" min="0" value="0" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="text" id="2-cust-app-2-name" aria-label="Custom Appliance 2 Name" value="" />
+                        <span>=</span>
+                        <input autocomplete="off" type="number" id="2-cust-app-2-va" aria-label="Custom Appliance 2 Load" min="0" value="0" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="text" id="2-cust-app-3-name" aria-label="Custom Appliance 3 Name" value="" />
+                        <span>=</span>
+                        <input autocomplete="off" type="number" id="2-cust-app-3-va" aria-label="Custom Appliance 3 Load" min="0" value="0" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Special Loads Total</span>
+                        <br><input autocomplete="off" type="number" id="2-special-va" aria-label="Special Loads Total Output" readonly />
+                        <span>VA &times;</span>
+                        <input autocomplete="off" type="number" id="2-special-cnt" aria-label="Special Loads Unit Count" min="0" value="7" />
+                        <span>units =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-special-out" aria-label="Special Loads Total Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="2-total-out" aria-label="General Loads Total Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases</p>
+                        <input autocomplete="off" type="number" id="2-phases-out" aria-label="Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>Total Connected Load</h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="number" id="3-phases-1-va" aria-label="Heating or A/C Phases Load" readonly />
+                        <span>VA +</span>
+                        <input autocomplete="off" type="number" id="3-phases-2-va" aria-label="General Loads Phases Load" readonly />
+                        <span>VA =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="3-subtotal-connected-out" aria-label="Subtotal Connected Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <p class="subsection">Applying Demand Factors: <em id="1-article-4">Table 120.84(C)</em></p>
+                <div class="row">
+                    <span>
+                        <input autocomplete="off" type="number" id="3-first-va" aria-label="Total Connected Load" readonly />
+                        <span>VA &times;</span>
+                        <input autocomplete="off" type="number" id="3-first-portion" aria-label="Total Connected Load Portion" min="0" value="44" />
+                        <span>% =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="3-total-connected-out" aria-label="Total Connected Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                        <p class="column-header">Total &Phi; Load</p>
+                        <input autocomplete="off" type="number" id="3-phases-out" aria-label="Total Phases Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>Neutral (Loads from Standard Calculation)</h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span>General Lighting and Receptacle</span>
+                        <br><span>Minimum Unit Load =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="4-gen-va" aria-label="General Lighting and Receptacle Minimum Unit Load" min="0" value="1500" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Fixed Appliances =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="4-fixed-app-va" aria-label="Fixed Appliances Load" min="0" value="1600" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Dryer =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="4-dryer-va" aria-label="Dryer Load" min="0" value="1700" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Cooking Equipment =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="4-cooking-va" aria-label="Cooking Equipment Load" min="0" value="3000" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Compactor =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="4-compactor-va" aria-label="Compactor Load" min="0" value="2500" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Water Heater =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="4-water-heater-va" aria-label="Water Heater Load" min="0" value="4000" />
+                        <span>VA</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="4-total-out" aria-label="Total Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                    <span>
+                    </span>
+                    <span>
+                        <p class="column-header">Total N Load</p>
+                        <input autocomplete="off" type="number" id="4-neutral-out" aria-label="Total Neutral Load Output" readonly />
+                        <span>VA</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <h2>Service:</h2>
+        <section>
+            <div>
+                <div class="row">
+                    <span>
+                        <span>Service Voltage =</span>
+                        <input autocomplete="off" type="number" id="5-service-voltage" aria-label="Service Voltage" min="1" value="240" />
+                        <span>V</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span>Service Phases:</span>
+                        <input autocomplete="off" type="radio" id="5-service-phase-1" name="5-service-phase" aria-label="Single phase service" value="1" />
+                        <label for="5-service-phase-1">1&Phi; Service</label>
+                        <input autocomplete="off" type="radio" id="5-service-phase-3" name="5-service-phase" aria-label="Three phase service" value="3" checked />
+                        <label for="5-service-phase-3">3&Phi; Service</label>
+                    </span>
+                </div>
+                <div class="row" style="align-items: center;">
+                    <span style="align-items: center; display: flex;">
+                        <span>Phases <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
+                        <span style="display: flex; flex-direction: column;">
+                            <span>
+                                <input autocomplete="off" type="number" id="5-phases-va" aria-label="Total Phases Load" readonly />
+                                <span>VA</span>
+                            </span>
+                            <hr class="divided-by" aria-hidden="true">
+                            <span class="sr-only">divided by</span>
+                            <span>
+                                <input autocomplete="off" type="number" id="5-phases-v" aria-label="Service Voltage" readonly />
+                                <span>
+                                    V <span id="5-phases-sqrt3">&times; &radic;<span class="overline-radical">3</span></span>
+                                </span>
+                            </span>
+                        </span>
+                        <span>=</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="5-phases-a-out" aria-label="Total Phases Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <div class="row" style="align-items: center;">
+                    <span style="align-items: center; display: flex;">
+                        <span>Neutral <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
+                        <span style="display: flex; flex-direction: column;">
+                            <span>
+                                <input autocomplete="off" type="number" id="5-neutral-va" aria-label="Total Neutral Load" readonly />
+                                <span>VA</span>
+                            </span>
+                            <hr class="divided-by" aria-hidden="true">
+                            <span class="sr-only">divided by</span>
+                            <span>
+                                <input autocomplete="off" type="number" id="5-neutral-v" aria-label="Service Voltage" readonly />
+                                <span>
+                                    V <span id="5-neutral-sqrt3">&times; &radic;<span class="overline-radical">3</span></span>
+                                </span>
+                            </span>
+                        </span>
+                        <span>=</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="5-neutral-a-out" aria-label="Total Neutral Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <p class="subsection">Permitted Reductions: <em id="5-article-1">120.61</em></p>
+                <div class="row">
+                    <span>
+                        <span class="w-short">First</span>
+                        <input autocomplete="off" type="number" id="5-first-va" aria-label="First Ampacity" readonly />
+                        <span>A &times; 100% =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="5-first-out" aria-label="First Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <span>
+                        <span class="w-short">Remaining</span>
+                        <input autocomplete="off" type="number" id="5-remaining-va" aria-label="Remaining Ampacity" readonly />
+                        <span>A &times; 70% =</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="5-remaining-out" aria-label="Remaining Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+                <div class="row" aria-live="polite">
+                    <span>
+                        <span class="bold">Total</span>
+                    </span>
+                    <span>
+                        <input autocomplete="off" type="number" id="5-total-out" aria-label="Total Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                    <span>
+                        <p class="column-header">Phases&nbsp;Ampacity</p>
+                        <input autocomplete="off" type="number" id="5-phases-final-out" aria-label="Final Phases Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                    <span>
+                        <p class="column-header sm-right-align">Neutral&nbsp;Ampacity</p>
+                        <input autocomplete="off" type="number" id="5-neutral-final-out" aria-label="Final Neutral Ampacity Output" readonly />
+                        <span>A</span>
+                    </span>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-button-container">
+            <button id="calculate">Calculate</button>
+        </div>
+    </footer>
+</body>
+</html>

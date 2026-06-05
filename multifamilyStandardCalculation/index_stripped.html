@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Standard Calculation: Multifamily Dwelling</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../config.js"></script>
     <script src="../versionData.js" defer></script>
@@ -14,7 +14,7 @@
         <h1>Standard Calculation: Multifamily Dwelling</h1>
         <p id="code-year"></p>
     </div>
-    <main class="card multifamily">
+    <main class="card">
         <h2>1. General Lighting and Receptacle Minimum Unit Load: <em id="1-article-1">120.41</em></h2>
         <section>
             <div>
@@ -61,7 +61,8 @@
                         <input type="number" id="1-small-app-va" aria-label="Small Appliances Load" min="0" value="1500" />
                         <span>VA &times;</span>
                         <input type="number" id="1-small-app-circuits" aria-label="Small Appliances Circuits" min="0" value="2" />
-                        <span>circuits &times;</span>
+                        <span>circuits</span>
+                        <br><span>&times;</span>
                         <input type="number" id="1-small-app-cnt" aria-label="Small Appliance Unit Count" min="0" value="5" />
                         <span>units =</span>
                     </span>
@@ -92,7 +93,7 @@
                         <span>VA</span>
                     </span>
                 </div>
-                <p class="subsection">Applying Demand Dactors: <em id="1-article-4">Table 120.45</em></p>
+                <p class="subsection">Applying Demand Factors: <em id="1-article-4">Table 120.45</em></p>
                 <div class="row">
                     <span>
                         <span class="w-short">First</span>
@@ -232,8 +233,7 @@
                 <div class="row">
                     <span>
                         <p class="bold w-long">&Phi; Total</p>
-                        <span>&nbsp;&nbsp;</span>
-                        <input type="number" id="2-total-phases-out" aria-label="Total Phases Load Output" readonly />
+                        <br><input type="number" id="2-total-phases-out" aria-label="Total Phases Load Output" readonly />
                         <span>VA &times; 75% &times;</span>
                         <input type="number" id="2-total-phases-cnt" aria-label="Total Phases Unit Count" min="0" value="6" />
                         <span>units =</span>
@@ -246,8 +246,7 @@
                 <div class="row">
                     <span>
                         <p class="bold w-long">N Total</p>
-                        <span>&nbsp;&nbsp;</span>
-                        <input type="number" id="2-total-neutral-out" aria-label="Total Neutral Load Output" readonly />
+                        <br><input type="number" id="2-total-neutral-out" aria-label="Total Neutral Load Output" readonly />
                         <span>VA &times; 75% &times;</span>
                         <input type="number" id="2-total-neutral-cnt" aria-label="Total Neutral Unit Count" min="0" value="6" />
                         <span>units =</span>
@@ -306,7 +305,7 @@
                 <div class="row">
                     <span>
                         <span>Col A</span>
-                        <input type="number" id="4-col-a-va" aria-label="Cooking Equipment Col A Load" min="0" value="3000" />
+                        <br><input type="number" id="4-col-a-va" aria-label="Cooking Equipment Col A Load" min="0" value="3000" />
                         <span>VA &times;</span>
                         <input type="number" id="4-col-a-num" aria-label="Cooking Equipment Col A Load Percentage" min="0" value="3" />
                         <span>% &times;</span>
@@ -321,7 +320,7 @@
                 <div class="row">
                     <span>
                         <span>Col B</span>
-                        <input type="number" id="4-col-b-va" aria-label="Cooking Equipment Col B Load" min="0" value="4000" />
+                        <br><input type="number" id="4-col-b-va" aria-label="Cooking Equipment Col B Load" min="0" value="4000" />
                         <span>VA &times;</span>
                         <input type="number" id="4-col-b-num" aria-label="Cooking Equipment Col B Load Percentage" min="0" value="4" />
                         <span>% &times;</span>
@@ -336,7 +335,7 @@
                 <div class="row">
                     <span>
                         <span>Col C</span>
-                        <input type="number" id="4-col-c-va" aria-label="Cooking Equipment Col C Load" min="0" value="5000" />
+                        <br><input type="number" id="4-col-c-va" aria-label="Cooking Equipment Col C Load" min="0" value="5000" />
                         <span>VA &times;</span>
                         <input type="number" id="4-col-c-num" aria-label="Cooking Equipment Col C Load Percentage" min="0" value="5" />
                         <span>% &times;</span>
@@ -375,8 +374,8 @@
             <div>
                 <div class="row">
                     <span>
-                        <p class="w-long">Heating Unit =</p>
-                        <input type="number" id="5-heating-unit-va" aria-label="Heating Unit Load" min="0" value="8000" />
+                        <p class="w-long">Heating Unit</p>
+                        <br><input type="number" id="5-heating-unit-va" aria-label="Heating Unit Load" min="0" value="8000" />
                         <span>VA &times; 100% &times;</span>
                         <input type="number" id="5-heating-unit-cnt" aria-label="Heating Unit Count" min="0" value="9" />
                         <span>units =</span>
@@ -388,8 +387,8 @@
                 </div>
                 <div class="row">
                     <span>
-                        <p class="w-long">A/C Unit =</p>
-                        <input type="number" id="5-ac-unit-va" aria-label="A/C Unit Load" min="0" value="12000" />
+                        <p class="w-long">A/C Unit</p>
+                        <br><input type="number" id="5-ac-unit-va" aria-label="A/C Unit Load" min="0" value="12000" />
                         <span>VA &times; 100% &times;</span>
                         <input type="number" id="5-ac-unit-cnt" aria-label="A/C Unit Count" min="0" value="9" />
                         <span>units =</span>
@@ -401,8 +400,8 @@
                 </div>
                 <div class="row">
                     <span>
-                        <p class="w-long">Heat Pump =</p>
-                        <input type="number" id="5-heat-pump-va" aria-label="Heat Pump Load" min="0" value="0" />
+                        <p class="w-long">Heat Pump</p>
+                        <br><input type="number" id="5-heat-pump-va" aria-label="Heat Pump Load" min="0" value="0" />
                         <span>VA &times; 100% &times;</span>
                         <input type="number" id="5-heat-pump-cnt" aria-label="Heat Pump Count" min="0" value="0" />
                         <span>units =</span>
@@ -500,28 +499,54 @@
                 <div class="row">
                     <span>
                         <span>Service Phases:</span>
+                        <input type="radio" id="7-service-phase-1" name="7-service-phase" aria-label="Single phase service" value="1" />
+                        <label for="7-service-phase-1">1&Phi; Service</label>
+                        <input type="radio" id="7-service-phase-3" name="7-service-phase" aria-label="Three phase service" value="3" checked />
+                        <label for="7-service-phase-3">3&Phi; Service</label>
                     </span>
                 </div>
-                <div class="row">
-                    <span>
+                <div class="row" style="align-items: center;">
+                    <span style="align-items: center; display: flex;">
                         <span>Phases <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
-                        <input type="number" id="7-phases-va" aria-label="Total Phases Load" readonly />
-                        <span>VA &div;</span>
-                        <input type="number" id="7-phases-v" aria-label="Service Voltage" readonly />
-                        <span>V =</span>
+                        <span style="display: flex; flex-direction: column;">
+                            <span>
+                                <input type="number" id="7-phases-va" aria-label="Total Phases Load" readonly />
+                                <span>VA</span>
+                            </span>
+                            <hr class="divided-by" aria-hidden="true">
+                            <span class="sr-only">divided by</span>
+                            <span>
+                                <input type="number" id="7-phases-v" aria-label="Service Voltage" readonly />
+                                <span>
+                                    V <span id="7-phases-sqrt3">&times; &radic;<span class="overline-radical">3</span></span>
+                                </span>
+                            </span>
+                        </span>
+                        <span>=</span>
                     </span>
                     <span>
                         <input type="number" id="7-phases-a-out" aria-label="Total Phases Ampacity Output" readonly />
                         <span>A</span>
                     </span>
                 </div>
-                <div class="row">
-                    <span>
+                <div class="row" style="align-items: center;">
+                    <span style="align-items: center; display: flex;">
                         <span>Neutral <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
-                        <input type="number" id="7-neutral-va" aria-label="Total Neutral Load" readonly />
-                        <span>VA &div;</span>
-                        <input type="number" id="7-neutral-v" aria-label="Service Voltage" readonly />
-                        <span>V =</span>
+                        <span style="display: flex; flex-direction: column;">
+                            <span>
+                                <input type="number" id="7-neutral-va" aria-label="Total Neutral Load" readonly />
+                                <span>VA</span>
+                            </span>
+                            <hr class="divided-by" aria-hidden="true">
+                            <span class="sr-only">divided by</span>
+                            <span>
+                                <input type="number" id="7-neutral-v" aria-label="Service Voltage" readonly />
+                                <span>
+                                    V <span id="7-neutral-sqrt3">&times; &radic;<span class="overline-radical">3</span></span>
+                                </span>
+                            </span>
+                        </span>
+                        <span>=</span>
                     </span>
                     <span>
                         <input type="number" id="7-neutral-a-out" aria-label="Total Neutral Ampacity Output" readonly />
@@ -551,7 +576,7 @@
                         <span>A</span>
                     </span>
                 </div>
-                <div class="row">
+                <div class="row" aria-live="polite">
                     <span>
                         <span class="bold">Total</span>
                     </span>
