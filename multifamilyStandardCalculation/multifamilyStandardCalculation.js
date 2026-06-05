@@ -2,6 +2,10 @@ const sqrt3 = Math.sqrt(3);
 const vData = versionData.find(v => v.year === year);
 const el_code_year = document.getElementById("code-year");
 const el_main = document.querySelector("main");
+
+const el_1_area_1_sqft = document.getElementById("1-area-1-sqft");
+const el_1_area_2_sqft = document.getElementById("1-area-2-sqft");
+const el_1_area_3_sqft = document.getElementById("1-area-3-sqft");
 const el_1_area_1 = document.getElementById("1-area-1");
 const el_1_area_2 = document.getElementById("1-area-2");
 const el_1_area_3 = document.getElementById("1-area-3");
@@ -28,6 +32,7 @@ const el_1_remaining_out = document.getElementById("1-remaining-out");
 const el_1_total_out = document.getElementById("1-total-out");
 const el_1_phases_out = document.getElementById("1-phases-out");
 const el_1_neutral_out = document.getElementById("1-neutral-out");
+
 const el_2_dishwasher_va = document.getElementById("2-dishwasher-va");
 const el_2_dishwasher_neutral = document.getElementById("2-dishwasher-neutral");
 const el_2_disposer_va = document.getElementById("2-disposer-va");
@@ -53,12 +58,14 @@ const el_2_total_neutral_cnt = document.getElementById("2-total-neutral-cnt");
 const el_2_total_neutral_75_out = document.getElementById("2-total-neutral-75-out");
 const el_2_phases_out = document.getElementById("2-phases-out");
 const el_2_neutral_out = document.getElementById("2-neutral-out");
+
 const el_3_dryer_va = document.getElementById("3-dryer-va");
 const el_3_dryer_cnt = document.getElementById("3-dryer-cnt");
 const el_3_dryer_percent = document.getElementById("3-dryer-percent");
 const el_3_dryer_out = document.getElementById("3-dryer-out");
 const el_3_phases_out = document.getElementById("3-phases-out");
 const el_3_neutral_out = document.getElementById("3-neutral-out");
+
 const el_4_col_a_va = document.getElementById("4-col-a-va");
 const el_4_col_a_cnt = document.getElementById("4-col-a-cnt");
 const el_4_col_a_num = document.getElementById("4-col-a-num");
@@ -74,6 +81,7 @@ const el_4_col_c_out = document.getElementById("4-col-c-out");
 const el_4_total_out = document.getElementById("4-total-out");
 const el_4_phases_out = document.getElementById("4-phases-out");
 const el_4_neutral_out = document.getElementById("4-neutral-out");
+
 const el_5_heating_unit_va = document.getElementById("5-heating-unit-va");
 const el_5_heating_unit_cnt = document.getElementById("5-heating-unit-cnt");
 const el_5_heating_unit_out = document.getElementById("5-heating-unit-out");
@@ -86,12 +94,14 @@ const el_5_heat_pump_out = document.getElementById("5-heat-pump-out");
 const el_5_largest_load_va = document.getElementById("5-largest-load-va");
 const el_5_phases_out = document.getElementById("5-phases-out");
 const el_5_neutral_out = document.getElementById("5-neutral-out");
+
 const el_6_phases_va = document.getElementById("6-phases-va");
 const el_6_phases_va_out = document.getElementById("6-phases-va-out");
 const el_6_phases_out = document.getElementById("6-phases-out");
 const el_6_neutral_va = document.getElementById("6-neutral-va");
 const el_6_neutral_va_out = document.getElementById("6-neutral-va-out");
 const el_6_neutral_out = document.getElementById("6-neutral-out");
+
 const el_7_service_voltage = document.getElementById("7-service-voltage");
 const el_7_service_phase_options = document.querySelectorAll('input[name="7-service-phase"]');
 const el_7_phases_va = document.getElementById("7-phases-va");
@@ -111,8 +121,10 @@ const el_7_phases_final_out = document.getElementById("7-phases-final-out");
 const el_7_neutral_final_out = document.getElementById("7-neutral-final-out");
 const el_7_phases_sqrt3 = document.getElementById("7-phases-sqrt3");
 const el_7_neutral_sqrt3 = document.getElementById("7-neutral-sqrt3");
+
 const el_footer_button_container = document.querySelector(".footer-button-container");
 const el_calculate = document.getElementById("calculate");
+const el_summary = document.getElementById("summary");
 const elementsWithMinAttribute = [
     el_1_area_1,
     el_1_area_2,
@@ -184,21 +196,25 @@ function runCalc() {
 
     el_code_year.innerHTML = `based on the ${vData.year} <em style="margin: 0 -0.25rem 0 0;">National Electrical Code</em><sup style="font-size: 0.7em;">®</sup>`;
 
-    el_1_area_1_out.value = parseInt(el_1_area_1.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_1_cnt.value);
-    el_1_area_2_out.value = parseInt(el_1_area_2.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_2_cnt.value);
-    el_1_area_3_out.value = parseInt(el_1_area_3.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_3_cnt.value);
-    el_1_small_app_out.value = parseInt(el_1_small_app_va.value) * parseInt(el_1_small_app_circuits.value) * parseInt(el_1_small_app_cnt.value);
-    el_1_laundry_out.value = parseInt(el_1_laundry_va.value) * 1 * parseInt(el_1_laundry_cnt.value);
-    el_1_subtotal_out.value = parseInt(el_1_area_1_out.value) + parseInt(el_1_small_app_out.value) + parseInt(el_1_laundry_out.value);
-    el_1_first_va.value = Math.min(parseInt(el_1_subtotal_out.value), 3000);
-    el_1_first_out.value = parseInt(el_1_first_va.value) * 1;
-    el_1_next_va.value = Math.min(Math.max(parseInt(el_1_subtotal_out.value) - 3000, 0), 117000);
-    el_1_next_out.value = parseInt(el_1_next_va.value) * 0.35;
-    el_1_remaining_va.value = Math.max(parseInt(el_1_subtotal_out.value) - 120000, 0);
-    el_1_remaining_out.value = parseInt(el_1_remaining_va.value) * 0.25;
-    el_1_total_out.value = parseInt(el_1_first_out.value) + parseInt(el_1_next_out.value) + parseInt(el_1_remaining_out.value);
-    el_1_phases_out.value = parseInt(el_1_total_out.value);
-    el_1_neutral_out.value = parseInt(el_1_total_out.value);
+    el_1_area_1_sqft.innerHTML = `sq ft &times; ${vData.categories.generalLighting.areaMultiplier} VA =`;
+    el_1_area_2_sqft.innerHTML = `sq ft &times; ${vData.categories.generalLighting.areaMultiplier} VA =`;
+    el_1_area_3_sqft.innerHTML = `sq ft &times; ${vData.categories.generalLighting.areaMultiplier} VA =`;
+
+    el_1_area_1_out.innerHTML = parseInt(el_1_area_1.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_1_cnt.value);
+    el_1_area_2_out.innerHTML = parseInt(el_1_area_2.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_2_cnt.value);
+    el_1_area_3_out.innerHTML = parseInt(el_1_area_3.value) * vData.categories.generalLighting.areaMultiplier * parseInt(el_1_area_3_cnt.value);
+    el_1_small_app_out.innerHTML = parseInt(el_1_small_app_va.value) * parseInt(el_1_small_app_circuits.value) * parseInt(el_1_small_app_cnt.value);
+    el_1_laundry_out.innerHTML = parseInt(el_1_laundry_va.value) * 1 * parseInt(el_1_laundry_cnt.value);
+    el_1_subtotal_out.innerHTML = parseInt(el_1_area_1_out.innerHTML) + parseInt(el_1_small_app_out.innerHTML) + parseInt(el_1_laundry_out.innerHTML);
+    el_1_first_va.innerHTML = Math.min(parseInt(el_1_subtotal_out.innerHTML), 3000);
+    el_1_first_out.innerHTML = parseInt(el_1_first_va.innerHTML) * 1;
+    el_1_next_va.innerHTML = Math.min(Math.max(parseInt(el_1_subtotal_out.innerHTML) - 3000, 0), 117000);
+    el_1_next_out.innerHTML = parseInt(el_1_next_va.innerHTML) * 0.35;
+    el_1_remaining_va.innerHTML = Math.max(parseInt(el_1_subtotal_out.innerHTML) - 120000, 0);
+    el_1_remaining_out.innerHTML = parseInt(el_1_remaining_va.innerHTML) * 0.25;
+    el_1_total_out.innerHTML = parseInt(el_1_first_out.innerHTML) + parseInt(el_1_next_out.innerHTML) + parseInt(el_1_remaining_out.innerHTML);
+    el_1_phases_out.innerHTML = parseInt(el_1_total_out.innerHTML);
+    el_1_neutral_out.innerHTML = parseInt(el_1_total_out.innerHTML);
 
     const _fixed_apps = [
         { value: parseInt(el_2_dishwasher_va.value), neutral: el_2_dishwasher_neutral.checked },
@@ -213,55 +229,55 @@ function runCalc() {
     let _2_total_phases = _fixed_apps.reduce((sum, app) => sum + app.value, 0);
     let _2_total_neutral = _fixed_apps.filter(app => app.neutral).slice(0, 4).reduce((sum, app) => app.neutral ? (sum + app.value) : sum, 0);
 
-    el_2_total_phases_out.value = _2_total_phases;
-    el_2_total_phases_75_out.value = Math.round(_2_total_phases * parseInt(el_2_total_phases_cnt.value) * 0.75);
-    el_2_total_neutral_out.value = _2_total_neutral;
-    el_2_total_neutral_75_out.value = Math.round(_2_total_neutral * parseInt(el_2_total_neutral_cnt.value) * 0.75);
-    el_2_phases_out.value = el_2_total_phases_75_out.value;
-    el_2_neutral_out.value = el_2_total_neutral_75_out.value;
+    el_2_total_phases_out.innerHTML = _2_total_phases;
+    el_2_total_phases_75_out.innerHTML = Math.round(_2_total_phases * parseInt(el_2_total_phases_cnt.value) * 0.75);
+    el_2_total_neutral_out.innerHTML = _2_total_neutral;
+    el_2_total_neutral_75_out.innerHTML = Math.round(_2_total_neutral * parseInt(el_2_total_neutral_cnt.value) * 0.75);
+    el_2_phases_out.innerHTML = el_2_total_phases_75_out.innerHTML;
+    el_2_neutral_out.innerHTML = el_2_total_neutral_75_out.innerHTML;
 
-    el_3_dryer_out.value = Math.round(parseInt(el_3_dryer_va.value) * parseInt(el_3_dryer_percent.value) / 100) * parseInt(el_3_dryer_cnt.value);
-    el_3_phases_out.value = el_3_dryer_out.value;
-    el_3_neutral_out.value = Math.round(el_3_dryer_out.value * 0.70);
+    el_3_dryer_out.innerHTML = Math.round(parseInt(el_3_dryer_va.value) * parseInt(el_3_dryer_percent.value) / 100) * parseInt(el_3_dryer_cnt.value);
+    el_3_phases_out.innerHTML = el_3_dryer_out.innerHTML;
+    el_3_neutral_out.innerHTML = Math.round(el_3_dryer_out.innerHTML * 0.70);
 
-    el_4_col_a_out.value = Math.round(parseInt(el_4_col_a_va.value) * parseInt(el_4_col_a_cnt.value) * parseInt(el_4_col_a_num.value) / 100);
-    el_4_col_b_out.value = Math.round(parseInt(el_4_col_b_va.value) * parseInt(el_4_col_b_cnt.value) * parseInt(el_4_col_b_num.value) / 100);
-    el_4_col_c_out.value = Math.round(parseInt(el_4_col_c_va.value) * parseInt(el_4_col_c_cnt.value) * parseInt(el_4_col_c_num.value) / 100);
-    el_4_total_out.value = parseInt(el_4_col_a_out.value) + parseInt(el_4_col_b_out.value) + parseInt(el_4_col_c_out.value);
-    el_4_phases_out.value = el_4_total_out.value;
-    el_4_neutral_out.value = Math.round(el_4_total_out.value * 0.70);
+    el_4_col_a_out.innerHTML = Math.round(parseInt(el_4_col_a_va.value) * parseInt(el_4_col_a_cnt.value) * parseInt(el_4_col_a_num.value) / 100);
+    el_4_col_b_out.innerHTML = Math.round(parseInt(el_4_col_b_va.value) * parseInt(el_4_col_b_cnt.value) * parseInt(el_4_col_b_num.value) / 100);
+    el_4_col_c_out.innerHTML = Math.round(parseInt(el_4_col_c_va.value) * parseInt(el_4_col_c_cnt.value) * parseInt(el_4_col_c_num.value) / 100);
+    el_4_total_out.innerHTML = parseInt(el_4_col_a_out.innerHTML) + parseInt(el_4_col_b_out.innerHTML) + parseInt(el_4_col_c_out.innerHTML);
+    el_4_phases_out.innerHTML = el_4_total_out.innerHTML;
+    el_4_neutral_out.innerHTML = Math.round(el_4_total_out.innerHTML * 0.70);
 
-    el_5_heating_unit_out.value = parseInt(el_5_heating_unit_va.value) * parseInt(el_5_heating_unit_cnt.value);
-    el_5_ac_unit_out.value = parseInt(el_5_ac_unit_va.value) * parseInt(el_5_ac_unit_cnt.value);
-    el_5_heat_pump_out.value = parseInt(el_5_heat_pump_va.value) * parseInt(el_5_heat_pump_cnt.value);
-    el_5_largest_load_va.value = Math.max(parseInt(el_5_heating_unit_out.value), parseInt(el_5_ac_unit_out.value), parseInt(el_5_heat_pump_out.value));
-    el_5_phases_out.value = parseInt(el_5_largest_load_va.value);
-    el_5_neutral_out.value = 0;
+    el_5_heating_unit_out.innerHTML = parseInt(el_5_heating_unit_va.value) * parseInt(el_5_heating_unit_cnt.value);
+    el_5_ac_unit_out.innerHTML = parseInt(el_5_ac_unit_va.value) * parseInt(el_5_ac_unit_cnt.value);
+    el_5_heat_pump_out.innerHTML = parseInt(el_5_heat_pump_va.value) * parseInt(el_5_heat_pump_cnt.value);
+    el_5_largest_load_va.innerHTML = Math.max(parseInt(el_5_heating_unit_out.innerHTML), parseInt(el_5_ac_unit_out.innerHTML), parseInt(el_5_heat_pump_out.innerHTML));
+    el_5_phases_out.innerHTML = parseInt(el_5_largest_load_va.innerHTML);
+    el_5_neutral_out.innerHTML = 0;
 
-    el_6_phases_va_out.value = Math.round(parseInt(el_6_phases_va.value) * 0.25);
-    el_6_neutral_va_out.value = Math.round(parseInt(el_6_neutral_va.value) * 0.25);
-    el_6_phases_out.value = el_6_phases_va_out.value;
-    el_6_neutral_out.value = el_6_neutral_va_out.value;
+    el_6_phases_va_out.innerHTML = Math.round(parseInt(el_6_phases_va.value) * 0.25);
+    el_6_neutral_va_out.innerHTML = Math.round(parseInt(el_6_neutral_va.value) * 0.25);
+    el_6_phases_out.innerHTML = el_6_phases_va_out.innerHTML;
+    el_6_neutral_out.innerHTML = el_6_neutral_va_out.innerHTML;
 
     el_7_service_voltage.value = el_7_service_voltage.value >= 1 ? el_7_service_voltage.value : 1;
     const selectedServicePhase = document.querySelector('input[name="7-service-phase"]:checked');
     const servicePhase = selectedServicePhase ? parseInt(selectedServicePhase.value) : 1;
     const phaseCurrentDivisor = servicePhase === 3 ? sqrt3 : 1;
-    el_7_phases_out.value = parseInt(el_1_phases_out.value) + parseInt(el_2_phases_out.value) + parseInt(el_3_phases_out.value) + parseInt(el_4_phases_out.value) + parseInt(el_5_phases_out.value) + parseInt(el_6_phases_out.value);
-    el_7_neutral_out.value = parseInt(el_1_neutral_out.value) + parseInt(el_2_neutral_out.value) + parseInt(el_3_neutral_out.value) + parseInt(el_4_neutral_out.value) + parseInt(el_5_neutral_out.value) + parseInt(el_6_neutral_out.value);
-    el_7_phases_va.value = parseInt(el_1_phases_out.value) + parseInt(el_2_phases_out.value) + parseInt(el_3_phases_out.value) + parseInt(el_4_phases_out.value) + parseInt(el_5_phases_out.value) + parseInt(el_6_phases_out.value);
-    el_7_phases_v.value = el_7_service_voltage.value;
-    el_7_phases_a_out.value = (parseInt(el_7_phases_va.value) / (parseInt(el_7_phases_v.value) * phaseCurrentDivisor)).toFixed(1);
-    el_7_neutral_va.value = parseInt(el_1_neutral_out.value) + parseInt(el_2_neutral_out.value) + parseInt(el_3_neutral_out.value) + parseInt(el_4_neutral_out.value) + parseInt(el_5_neutral_out.value) + parseInt(el_6_neutral_out.value);
-    el_7_neutral_v.value = el_7_service_voltage.value;
-    el_7_neutral_a_out.value = (parseInt(el_7_neutral_va.value) / (parseInt(el_7_neutral_v.value) * phaseCurrentDivisor)).toFixed(1);
-    el_7_first_va.value = Math.min(parseFloat(el_7_neutral_a_out.value), 200).toFixed(1);
-    el_7_first_out.value = (parseFloat(el_7_first_va.value) * 1).toFixed(1);
-    el_7_remaining_va.value = Math.max(parseFloat(el_7_neutral_a_out.value) - 200, 0).toFixed(1);
-    el_7_remaining_out.value = (parseFloat(el_7_remaining_va.value) * 0.25).toFixed(1);
-    el_7_total_out.value = (parseFloat(el_7_first_out.value) + parseFloat(el_7_remaining_out.value)).toFixed(1);
-    el_7_phases_final_out.value = el_7_phases_a_out.value;
-    el_7_neutral_final_out.value = el_7_total_out.value;
+    el_7_phases_out.innerHTML = parseInt(el_1_phases_out.innerHTML) + parseInt(el_2_phases_out.innerHTML) + parseInt(el_3_phases_out.innerHTML) + parseInt(el_4_phases_out.innerHTML) + parseInt(el_5_phases_out.innerHTML) + parseInt(el_6_phases_out.innerHTML);
+    el_7_neutral_out.innerHTML = parseInt(el_1_neutral_out.innerHTML) + parseInt(el_2_neutral_out.innerHTML) + parseInt(el_3_neutral_out.innerHTML) + parseInt(el_4_neutral_out.innerHTML) + parseInt(el_5_neutral_out.innerHTML) + parseInt(el_6_neutral_out.innerHTML);
+    el_7_phases_va.innerHTML = parseInt(el_1_phases_out.innerHTML) + parseInt(el_2_phases_out.innerHTML) + parseInt(el_3_phases_out.innerHTML) + parseInt(el_4_phases_out.innerHTML) + parseInt(el_5_phases_out.innerHTML) + parseInt(el_6_phases_out.innerHTML);
+    el_7_phases_v.innerHTML = el_7_service_voltage.value;
+    el_7_phases_a_out.innerHTML = (parseInt(el_7_phases_va.innerHTML) / (parseInt(el_7_phases_v.innerHTML) * phaseCurrentDivisor)).toFixed(1);
+    el_7_neutral_va.innerHTML = parseInt(el_1_neutral_out.innerHTML) + parseInt(el_2_neutral_out.innerHTML) + parseInt(el_3_neutral_out.innerHTML) + parseInt(el_4_neutral_out.innerHTML) + parseInt(el_5_neutral_out.innerHTML) + parseInt(el_6_neutral_out.innerHTML);
+    el_7_neutral_v.innerHTML = el_7_service_voltage.value;
+    el_7_neutral_a_out.innerHTML = (parseInt(el_7_neutral_va.innerHTML) / (parseInt(el_7_neutral_v.innerHTML) * phaseCurrentDivisor)).toFixed(1);
+    el_7_first_va.innerHTML = Math.min(parseFloat(el_7_neutral_a_out.innerHTML), 200).toFixed(1);
+    el_7_first_out.innerHTML = (parseFloat(el_7_first_va.innerHTML) * 1).toFixed(1);
+    el_7_remaining_va.innerHTML = Math.max(parseFloat(el_7_neutral_a_out.innerHTML) - 200, 0).toFixed(1);
+    el_7_remaining_out.innerHTML = (parseFloat(el_7_remaining_va.innerHTML) * 0.25).toFixed(1);
+    el_7_total_out.innerHTML = (parseFloat(el_7_first_out.innerHTML) + parseFloat(el_7_remaining_out.innerHTML)).toFixed(1);
+    el_7_phases_final_out.innerHTML = el_7_phases_a_out.innerHTML;
+    el_7_neutral_final_out.innerHTML = el_7_total_out.innerHTML;
 
     if (servicePhase === 1) {
         el_7_phases_sqrt3.style.display = "none";
@@ -271,6 +287,8 @@ function runCalc() {
         el_7_phases_sqrt3.style.display = "inline";
         el_7_neutral_sqrt3.style.display = "inline";
     }
+
+    el_summary.innerHTML = `Summary: Calculated Phases Ampacity = ${el_7_phases_final_out.innerHTML} amps. Calculated Neutral Ampacity = ${el_7_neutral_final_out.innerHTML} amps.`;
 };
 
 window.addEventListener("resize", resizeFooterWidth);

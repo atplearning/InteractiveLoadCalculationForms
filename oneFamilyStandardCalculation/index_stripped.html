@@ -22,10 +22,10 @@
                 <div class="row">
                     <span>
                         <input type="number" id="1-area" aria-label="Dwelling Area" min="0" value="3000" />
-                        <span>sq ft &times; 2 VA =</span>
+                        <span id="1-area-sqft">sq ft &times; 2 VA =</span>
                     </span>
                     <span>
-                        <input type="number" id="1-area-out" aria-label="Dwelling Area Load Output" readonly />
+                        <span class="output" role="textbox" id="1-area-out" aria-label="Dwelling Area Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -38,7 +38,7 @@
                         <span>circuits =</span>
                     </span>
                     <span>
-                        <input type="number" id="1-small-app-out" aria-label="Small Appliances Load Output" readonly />
+                        <span class="output" role="textbox" id="1-small-app-out" aria-label="Small Appliances Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -49,7 +49,7 @@
                         <span>VA &times; 1 =</span>
                     </span>
                     <span>
-                        <input type="number" id="1-laundry-out" aria-label="Laundry Load Output" readonly />
+                        <span class="output" role="textbox" id="1-laundry-out" aria-label="Laundry Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -58,7 +58,7 @@
                         <span class="bold">Subtotal</span>
                     </span>
                     <span>
-                        <input type="number" id="1-subtotal-out" aria-label="Subtotal Load Output" readonly />
+                        <span class="output" role="textbox" id="1-subtotal-out" aria-label="Subtotal Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -66,33 +66,33 @@
                 <div class="row">
                     <span>
                         <span class="w-short">First</span>
-                        <input type="number" id="1-first-va" aria-label="First Load Portion" readonly />
+                        <span class="output" role="textbox" id="1-first-va" aria-label="First Load Portion" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times; 100% =</span>
                     </span>
                     <span>
-                        <input type="number" id="1-first-out" aria-label="First Load Portion Output" readonly />
+                        <span class="output" role="textbox" id="1-first-out" aria-label="First Load Portion Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
                 <div class="row">
                     <span>
                         <span class="w-short">Next</span>
-                        <input type="number" id="1-next-va" aria-label="Next Load Portion" readonly />
+                        <span class="output" role="textbox" id="1-next-va" aria-label="Next Load Portion" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times; 35% =</span>
                     </span>
                     <span>
-                        <input type="number" id="1-next-out" aria-label="Next Load Portion Output" readonly />
+                        <span class="output" role="textbox" id="1-next-out" aria-label="Next Load Portion Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
                 <div class="row">
                     <span>
                         <span class="w-short">Remaining</span>
-                        <input type="number" id="1-remaining-va" aria-label="Remaining Load Portion" readonly />
+                        <span class="output" role="textbox" id="1-remaining-va" aria-label="Remaining Load Portion" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times; 25% =</span>
                     </span>
                     <span>
-                        <input type="number" id="1-remaining-out" aria-label="Remaining Load Portion Output" readonly />
+                        <span class="output" role="textbox" id="1-remaining-out" aria-label="Remaining Load Portion Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -101,17 +101,17 @@
                         <span class="bold">Total</span>
                     </span>
                     <span>
-                        <input type="number" id="1-total-out" aria-label="Total Load Output" readonly />
+                        <span class="output" role="textbox" id="1-total-out" aria-label="Total Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Phases</p>
-                        <input type="number" id="1-phases-out" aria-label="Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="1-phases-out" aria-label="Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Neutral</p>
-                        <input type="number" id="1-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="1-neutral-out" aria-label="Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -203,11 +203,11 @@
                     <span>
                         <p class="bold w-long">&Phi; Total</p>
                         <span>&nbsp;&nbsp;</span>
-                        <input type="number" id="2-total-phases-out" aria-label="Total Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="2-total-phases-out" aria-label="Total Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times; 75% =</span>
                     </span>
                     <span>
-                        <input type="number" id="2-total-phases-75-out" aria-label="Total Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="2-total-phases-75-out" aria-label="Total Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -215,21 +215,21 @@
                     <span>
                         <p class="bold w-long">N Total</p>
                         <span>&nbsp;&nbsp;</span>
-                        <input type="number" id="2-total-neutral-out" aria-label="Total Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="2-total-neutral-out" aria-label="Total Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times; 75% =</span>
                     </span>
                     <span>
-                        <input type="number" id="2-total-neutral-75-out" aria-label="Total Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="2-total-neutral-75-out" aria-label="Total Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Phases</p>
-                        <input type="number" id="2-phases-out" aria-label="Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="2-phases-out" aria-label="Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Neutral</p>
-                        <input type="number" id="2-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="2-neutral-out" aria-label="Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -247,17 +247,17 @@
                         <span>% =</span>
                     </span>
                     <span>
-                        <input type="number" id="3-dryer-out" aria-label="Dryer Load Output" readonly />
+                        <span class="output" role="textbox" id="3-dryer-out" aria-label="Dryer Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Phases</p>
-                        <input type="number" id="3-phases-out" aria-label="Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="3-phases-out" aria-label="Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times; 70% =</span>
                     </span>
                     <span>
                         <p class="column-header">Neutral</p>
-                        <input type="number" id="3-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="3-neutral-out" aria-label="Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -276,7 +276,7 @@
                         <span>% =</span>
                     </span>
                     <span>
-                        <input type="number" id="4-col-a-out" aria-label="Cooking Equipment Col A Load Output" readonly />
+                        <span class="output" role="textbox" id="4-col-a-out" aria-label="Cooking Equipment Col A Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -289,7 +289,7 @@
                         <span>% =</span>
                     </span>
                     <span>
-                        <input type="number" id="4-col-b-out" aria-label="Cooking Equipment Col B Load Output" readonly />
+                        <span class="output" role="textbox" id="4-col-b-out" aria-label="Cooking Equipment Col B Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -302,7 +302,7 @@
                         <span>% =</span>
                     </span>
                     <span>
-                        <input type="number" id="4-col-c-out" aria-label="Cooking Equipment Col C Load Output" readonly />
+                        <span class="output" role="textbox" id="4-col-c-out" aria-label="Cooking Equipment Col C Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -311,17 +311,17 @@
                         <span class="bold">Total</span>
                     </span>
                     <span>
-                        <input type="number" id="4-total-out" aria-label="Cooking Equipment Total Load Output" readonly />
+                        <span class="output" role="textbox" id="4-total-out" aria-label="Cooking Equipment Total Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Phases</p>
-                        <input type="number" id="4-phases-out" aria-label="Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="4-phases-out" aria-label="Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times; 70% =</span>
                     </span>
                     <span>
                         <p class="column-header">Neutral</p>
-                        <input type="number" id="4-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="4-neutral-out" aria-label="Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -338,7 +338,7 @@
                         <span>VA &times; 100% =</span>
                     </span>
                     <span>
-                        <input type="number" id="5-heating-unit-out" aria-label="Heating Unit Load Output" readonly />
+                        <span class="output" role="textbox" id="5-heating-unit-out" aria-label="Heating Unit Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -349,7 +349,7 @@
                         <span>VA &times; 100% =</span>
                     </span>
                     <span>
-                        <input type="number" id="5-ac-unit-out" aria-label="A/C Unit Load Output" readonly />
+                        <span class="output" role="textbox" id="5-ac-unit-out" aria-label="A/C Unit Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -360,7 +360,7 @@
                         <span>VA &times; 100% =</span>
                     </span>
                     <span>
-                        <input type="number" id="5-heat-pump-out" aria-label="Heat Pump Load Output" readonly />
+                        <span class="output" role="textbox" id="5-heat-pump-out" aria-label="Heat Pump Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -369,17 +369,17 @@
                         <span class="bold">Largest Load</span>
                     </span>
                     <span>
-                        <input type="number" id="5-largest-load-va" aria-label="Largest Load Output" readonly />
+                        <span class="output" role="textbox" id="5-largest-load-va" aria-label="Largest Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Phases</p>
-                        <input type="number" id="5-phases-out" aria-label="Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="5-phases-out" aria-label="Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Neutral</p>
-                        <input type="number" id="5-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="5-neutral-out" aria-label="Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -397,7 +397,7 @@
                         <span>VA &times; 25% =</span>
                     </span>
                     <span>
-                        <input type="number" id="6-phases-va-out" aria-label="Largest Motor Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="6-phases-va-out" aria-label="Largest Motor Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
@@ -411,17 +411,17 @@
                         <span>VA &times; 25% =</span>
                     </span>
                     <span>
-                        <input type="number" id="6-neutral-va-out" aria-label="Largest Motor Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="6-neutral-va-out" aria-label="Largest Motor Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Phases</p>
-                        <input type="number" id="6-phases-out" aria-label="Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="6-phases-out" aria-label="Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Neutral</p>
-                        <input type="number" id="6-neutral-out" aria-label="Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="6-neutral-out" aria-label="Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -440,12 +440,12 @@
                     <span></span>
                     <span>
                         <p class="column-header">Phases</p>
-                        <input type="number" id="7-phases-out" aria-label="Total Phases Load Output" readonly />
+                        <span class="output" role="textbox" id="7-phases-out" aria-label="Total Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header">Neutral</p>
-                        <input type="number" id="7-neutral-out" aria-label="Total Neutral Load Output" readonly />
+                        <span class="output" role="textbox" id="7-neutral-out" aria-label="Total Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -454,20 +454,20 @@
                         <span>Phases <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
                         <span style="display: flex; flex-direction: column;">
                             <span>
-                                <input type="number" id="7-phases-va" aria-label="Total Phases Load" readonly />
+                                <span class="output" role="textbox" id="7-phases-va" aria-label="Total Phases Load" readonly aria-readonly="true" tabindex="0"></span>
                                 <span>VA</span>
                             </span>
                             <hr class="divided-by" aria-hidden="true">
                             <span class="sr-only">divided by</span>
                             <span>
-                                <input type="number" id="7-phases-v" aria-label="Service Voltage" readonly />
+                                <span class="output" role="textbox" id="7-phases-v" aria-label="Service Voltage" readonly aria-readonly="true" tabindex="0"></span>
                                 <span>V</span>
                             </span>
                         </span>
                         <span>=</span>
                     </span>
                     <span>
-                        <input type="number" id="7-phases-a-out" aria-label="Total Phases Ampacity Output" readonly />
+                        <span class="output" role="textbox" id="7-phases-a-out" aria-label="Total Phases Ampacity Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A</span>
                     </span>
                 </div>
@@ -476,20 +476,20 @@
                         <span>Neutral <em style="font-family: 'Times New Roman', Times, serif;">I</em> =</span>
                         <span style="display: flex; flex-direction: column;">
                             <span>
-                                <input type="number" id="7-neutral-va" aria-label="Total Neutral Load" readonly />
+                                <span class="output" role="textbox" id="7-neutral-va" aria-label="Total Neutral Load" readonly aria-readonly="true" tabindex="0"></span>
                                 <span>VA</span>
                             </span>
                             <hr class="divided-by" aria-hidden="true">
                             <span class="sr-only">divided by</span>
                             <span>
-                                <input type="number" id="7-neutral-v" aria-label="Service Voltage" readonly />
+                                <span class="output" role="textbox" id="7-neutral-v" aria-label="Service Voltage" readonly aria-readonly="true" tabindex="0"></span>
                                 <span>V</span>
                             </span>
                         </span>
                         <span>=</span>
                     </span>
                     <span>
-                        <input type="number" id="7-neutral-a-out" aria-label="Total Neutral Ampacity Output" readonly />
+                        <span class="output" role="textbox" id="7-neutral-a-out" aria-label="Total Neutral Ampacity Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A</span>
                     </span>
                 </div>
@@ -497,41 +497,41 @@
                 <div class="row">
                     <span>
                         <span class="w-short">First</span>
-                        <input type="number" id="7-first-va" aria-label="First Ampacity" readonly />
+                        <span class="output" role="textbox" id="7-first-va" aria-label="First Ampacity" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A &times; 100% =</span>
                     </span>
                     <span>
-                        <input type="number" id="7-first-out" aria-label="First Ampacity Output" readonly />
+                        <span class="output" role="textbox" id="7-first-out" aria-label="First Ampacity Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A</span>
                     </span>
                 </div>
                 <div class="row">
                     <span>
                         <span class="w-short">Remaining</span>
-                        <input type="number" id="7-remaining-va" aria-label="Remaining Ampacity" readonly />
+                        <span class="output" role="textbox" id="7-remaining-va" aria-label="Remaining Ampacity" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A &times; 70% =</span>
                     </span>
                     <span>
-                        <input type="number" id="7-remaining-out" aria-label="Remaining Ampacity Output" readonly />
+                        <span class="output" role="textbox" id="7-remaining-out" aria-label="Remaining Ampacity Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A</span>
                     </span>
                 </div>
-                <div class="row" aria-live="polite">
+                <div class="row">
                     <span>
                         <span class="bold">Total</span>
                     </span>
                     <span>
-                        <input type="number" id="7-total-out" aria-label="Total Ampacity Output" readonly />
+                        <span class="output" role="textbox" id="7-total-out" aria-label="Total Ampacity Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A</span>
                     </span>
                     <span>
                         <p class="column-header">Phases&nbsp;Ampacity</p>
-                        <input type="number" id="7-phases-final-out" aria-label="Final Phases Ampacity Output" readonly />
+                        <span class="output" role="textbox" id="7-phases-final-out" aria-label="Final Phases Ampacity Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A</span>
                     </span>
                     <span>
                         <p class="column-header sm-right-align">Neutral&nbsp;Ampacity</p>
-                        <input type="number" id="7-neutral-final-out" aria-label="Final Neutral Ampacity Output" readonly />
+                        <span class="output" role="textbox" id="7-neutral-final-out" aria-label="Final Neutral Ampacity Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>A</span>
                     </span>
                 </div>
@@ -543,5 +543,6 @@
             <button id="calculate">Calculate</button>
         </div>
     </footer>
+    <p class="sr-only" id="summary" aria-live="polite"></p>
 </body>
 </html>

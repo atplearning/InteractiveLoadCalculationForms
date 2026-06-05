@@ -38,7 +38,6 @@ hr {
 }
 
 input {
-    margin: 0 -0.25rem 0 0.25rem;
 }
 
 input[type="text"] {
@@ -47,22 +46,16 @@ input[type="text"] {
 }
 
 input[type="number"] {
+    padding: 1px 2px;
+    text-align: right;
     width: var(--w-number-input);
     -moz-appearance: textfield;
-    text-align: right;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
-
-input[readonly] {
-    background: lightyellow;
-    border: 1px solid orange;
-    border-radius: 2px;
-    padding: 2px;
 }
 
 main {
@@ -134,18 +127,23 @@ section {
     width: 100%;
 }
 
-.overline {
+.output {
+    background: lightyellow;
+    border: 1px solid orange;
+    border-radius: 2px;
     display: inline-block;
-    border-top: 1px solid currentColor;
-    padding: 0.5rem 0 0 0;
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 2px;
+    text-align: right;
+    width: var(--w-number-input);
 }
 
 .overline-radical {
-    display: inline-block;
     border-top: 1px solid currentColor;
-    width: 0.75em;
-    margin: 0;
+    margin: 0 0 0 -1px;
     padding: 0 0 0 0.125em;
+    width: 0.75em;
 }
 
 .row {
@@ -154,6 +152,10 @@ section {
     grid-template-columns: calc(var(--col-one-multi) * var(--w-text-input)) calc(2.75 * var(--w-number-input));
     min-height: 35px;
     position: relative;
+}
+
+.row > span > * {
+    margin-inline: 0;
 }
 
 .sr-only {
