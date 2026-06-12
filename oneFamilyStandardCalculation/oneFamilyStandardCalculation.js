@@ -183,14 +183,26 @@ function runCalc() {
     ].sort((a, b) => a.value - b.value);
 
     let _2_total_phases = _fixed_apps.reduce((sum, app) => sum + app.value, 0);
-    let _2_total_neutral = _fixed_apps.filter(app => app.neutral).slice(0, 4).reduce((sum, app) => app.neutral ? (sum + app.value) : sum, 0);
+    let _2_total_neutral = 0;
+    const neutral_apps = _fixed_apps.filter(app => app.neutral);
+    const deratable_neutral_cnt = neutral_apps.filter(app => app.value >= 500).length;
+
+    // If few than 4 neutral loads rated at least 500 VA...
+    if (deratable_neutral_cnt < 4) {
+        // ...then do not derate any neutral loads.
+        _2_total_neutral = neutral_apps.reduce((sum, app) => sum + app.value, 0);
+    }
+    // If at least 4 neutral loads rated at least 500 VA...
+    else {
+        // ...then derate all neutral loads rated at least 500 VA to 75% of their value.
+        // Neutral loads rated less than 500 VA are not derated.
+        _2_total_neutral = neutral_apps.reduce((sum, app) => app.value >= 500 ? (sum + Math.round(app.value * 0.75)) : (sum + app.value), 0);
+    }
 
     el_2_total_phases_out.innerHTML = _2_total_phases;
-    el_2_total_phases_75_out.innerHTML = Math.round(_2_total_phases * 0.75);
     el_2_total_neutral_out.innerHTML = _2_total_neutral;
-    el_2_total_neutral_75_out.innerHTML = Math.round(_2_total_neutral * 0.75);
-    el_2_phases_out.innerHTML = el_2_total_phases_75_out.innerHTML;
-    el_2_neutral_out.innerHTML = el_2_total_neutral_75_out.innerHTML;
+    el_2_phases_out.innerHTML = el_2_total_phases_out.innerHTML;
+    el_2_neutral_out.innerHTML = el_2_total_neutral_out.innerHTML;
 
     el_3_dryer_out.innerHTML = Math.round(parseInt(el_3_dryer_va.value) * parseInt(el_3_dryer_percent.value) / 100);
     el_3_phases_out.innerHTML = el_3_dryer_out.innerHTML;
