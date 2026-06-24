@@ -201,7 +201,8 @@
                 </div>
                 <div class="row">
                     <span>
-                        <p class="bold w-long">&Phi; Total</p>
+                        <p class="bold w-long" aria-hidden=""true>&Phi; Total</p>
+                        <p class="sr-only">Phase Total</p>
                         <span>&nbsp;&nbsp;</span>
                         <span class="output" role="textbox" id="2-total-phases-out" aria-label="Total Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
@@ -321,7 +322,7 @@
             </div>
         </section>
         <hr>
-        <h2>5. Heating and A/C: <em id="5-article-1">120.6</em></h2>
+        <h2><span aria-hidden="true">5. Heating and A/C: <em id="5-article-1">120.6</em></span><span class="sr-only">5. Heating and AC: <em id="5-article-1">120.6</em></span></h2>
         <section>
             <div>
                 <div class="row">
@@ -337,12 +338,13 @@
                 </div>
                 <div class="row">
                     <span>
-                        <p class="w-long">A/C Unit =</p>
-                        <input type="number" id="5-ac-unit-va" aria-label="A/C Unit Load" min="0" value="0" />
+                        <p class="w-long" aria-hidden="true">A/C Unit =</p>
+                        <p class="sr-only">AC Unit =</p>
+                        <input type="number" id="5-ac-unit-va" aria-label="AC Unit Load" min="0" value="0" />
                         <span>VA &times; 100% =</span>
                     </span>
                     <span>
-                        <span class="output" role="textbox" id="5-ac-unit-out" aria-label="A/C Unit Load Output" readonly aria-readonly="true" tabindex="0"></span>
+                        <span class="output" role="textbox" id="5-ac-unit-out" aria-label="AC Unit Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -421,7 +423,10 @@
             </div>
         </section>
         <hr>
-        <h2>1&Phi; Service:</h2>
+        <h2>
+            <span aria-hidden="true">1&Phi; Service:</span>
+            <span class="sr-only">1 Phases Service:</span>
+        </h2>
         <section>
             <div>
                 <div class="row">

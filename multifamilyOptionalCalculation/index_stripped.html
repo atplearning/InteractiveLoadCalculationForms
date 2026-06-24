@@ -15,7 +15,7 @@
         <p id="code-year"></p>
     </div>
     <main class="card">
-        <h2>1. Heating or A/C: <em id="1-article-1">120.84(C)(5)</em></h2>
+        <h2><span aria-hidden="true">1. Heating or A/C: <em id="1-article-1">120.84(C)(5)</em></span><span class="sr-only">1. Heating or AC: <em id="1-article-1">120.84(C)(5)</em></span></h2>
         <section>
             <div>
                 <div class="row">
@@ -33,14 +33,15 @@
                 </div>
                 <div class="row">
                     <span>
-                        <span>A/C Unit</span>
-                        <br><input autocomplete="off" type="number" id="1-ac-unit" aria-label="A/C Unit Load" min="0" value="0" />
+                        <span aria-hidden="true">A/C Unit</span>
+                        <span class="sr-only">AC Unit</span>
+                        <br><input autocomplete="off" type="number" id="1-ac-unit" aria-label="AC Unit Load" min="0" value="0" />
                         <span>VA &times; 100% &times;</span>
-                        <input autocomplete="off" type="number" id="1-ac-unit-cnt" aria-label="A/C Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-ac-unit-cnt" aria-label="AC Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
-                        <span class="output" role="textbox" id="1-ac-unit-out" aria-label="A/C Unit Load Output" readonly aria-readonly="true" tabindex="0"></span>
+                        <span class="output" role="textbox" id="1-ac-unit-out" aria-label="AC Unit Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
                 </div>
@@ -247,7 +248,7 @@
             <div>
                 <div class="row">
                     <span>
-                        <span class="output" role="textbox" id="3-phases-1-va" aria-label="Heating or A/C Phases Load" readonly aria-readonly="true" tabindex="0"></span>
+                        <span class="output" role="textbox" id="3-phases-1-va" aria-label="Heating or AC Phases Load" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA +</span>
                         <span class="output" role="textbox" id="3-phases-2-va" aria-label="General Loads Phases Load" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA =</span>
@@ -272,7 +273,8 @@
                     <span>
                     </span>
                     <span>
-                        <p class="column-header">Total &Phi; Load</p>
+                        <p class="column-header" aria-hidden="true">Total &Phi; Load</p>
+                        <p class="sr-only">Total Phase Load</p>
                         <span class="output" role="textbox" id="3-phases-out" aria-label="Total Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA</span>
                     </span>
@@ -371,9 +373,15 @@
                     <span>
                         <span>Service Phases:</span>
                         <input autocomplete="off" type="radio" id="5-service-phase-1" name="5-service-phase" aria-label="Single phase service" value="1" />
-                        <label for="5-service-phase-1">1&Phi; Service</label>
+                        <label for="5-service-phase-1">
+                            <span aria-hidden="true">1&Phi; Service</span>
+                            <span class="sr-only">1 Phase Service</span>
+                        </label>
                         <input autocomplete="off" type="radio" id="5-service-phase-3" name="5-service-phase" aria-label="Three phase service" value="3" checked />
-                        <label for="5-service-phase-3">3&Phi; Service</label>
+                        <label for="5-service-phase-3">
+                            <span aria-hidden="true">3&Phi; Service</span>
+                            <span class="sr-only">3 Phase Service</span>
+                        </label>
                     </span>
                 </div>
                 <div class="row" style="align-items: center;">

@@ -227,7 +227,7 @@ function runCalc() {
     el_6_phases_out.innerHTML = el_6_phases_va_out.innerHTML;
     el_6_neutral_out.innerHTML = el_6_neutral_va_out.innerHTML;
 
-    el_7_service_voltage.value = el_7_service_voltage.value >= 1 ? el_7_service_voltage.value : 1;
+    el_7_service_voltage.value = parseInt(el_7_service_voltage.value) >= 1 ? parseInt(el_7_service_voltage.value) : 1;
     el_7_phases_out.innerHTML = parseInt(el_1_phases_out.innerHTML) + parseInt(el_2_phases_out.innerHTML) + parseInt(el_3_phases_out.innerHTML) + parseInt(el_4_phases_out.innerHTML) + parseInt(el_5_phases_out.innerHTML) + parseInt(el_6_phases_out.innerHTML);
     el_7_neutral_out.innerHTML = parseInt(el_1_neutral_out.innerHTML) + parseInt(el_2_neutral_out.innerHTML) + parseInt(el_3_neutral_out.innerHTML) + parseInt(el_4_neutral_out.innerHTML) + parseInt(el_5_neutral_out.innerHTML) + parseInt(el_6_neutral_out.innerHTML);
     el_7_phases_va.innerHTML = parseInt(el_1_phases_out.innerHTML) + parseInt(el_2_phases_out.innerHTML) + parseInt(el_3_phases_out.innerHTML) + parseInt(el_4_phases_out.innerHTML) + parseInt(el_5_phases_out.innerHTML) + parseInt(el_6_phases_out.innerHTML);

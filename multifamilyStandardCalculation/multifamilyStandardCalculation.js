@@ -273,7 +273,7 @@ function runCalc() {
     el_6_phases_out.innerHTML = el_6_phases_va_out.innerHTML;
     el_6_neutral_out.innerHTML = el_6_neutral_va_out.innerHTML;
 
-    el_7_service_voltage.value = el_7_service_voltage.value >= 1 ? el_7_service_voltage.value : 1;
+    el_7_service_voltage.value = parseInt(el_7_service_voltage.value) >= 1 ? parseInt(el_7_service_voltage.value) : 1;
     const selectedServicePhase = document.querySelector('input[name="7-service-phase"]:checked');
     const servicePhase = selectedServicePhase ? parseInt(selectedServicePhase.value) : 1;
     const phaseCurrentDivisor = servicePhase === 3 ? sqrt3 : 1;

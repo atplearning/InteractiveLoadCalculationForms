@@ -197,7 +197,7 @@ function runCalc() {
     el_4_total_out.innerHTML = parseInt(el_4_gen_va.value) + parseInt(el_4_fixed_app_va.value) + parseInt(el_4_dryer_va.value) + parseInt(el_4_cooking_va.value) + parseInt(el_4_compactor_va.value) + parseInt(el_4_water_heater_va.value);
     el_4_neutral_out.innerHTML = el_4_total_out.innerHTML;
 
-    el_5_service_voltage.innerHTML = el_5_service_voltage.value >= 1 ? el_5_service_voltage.value : 1;
+    el_5_service_voltage.innerHTML = parseInt(el_5_service_voltage.value) >= 1 ? parseInt(el_5_service_voltage.value) : 1;
     const selectedServicePhase = document.querySelector('input[name="5-service-phase"]:checked');
     const servicePhase = selectedServicePhase ? parseInt(selectedServicePhase.value) : 1;
     const phaseCurrentDivisor = servicePhase === 3 ? sqrt3 : 1;
