@@ -6,7 +6,7 @@
     <title>Standard Calculation: Multifamily Dwelling</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../config.js"></script>
-    <script src="../versionData.js" defer></script>
+    <script src="../versionData.js"></script>
     <script src="multifamilyStandardCalculation.js" defer></script>
 </head>
 <body>
@@ -21,9 +21,9 @@
                 <p class="subsection">Dwelling Area:</p>
                 <div class="row">
                     <span>
-                        <input type="number" id="1-area-1" aria-label="Dwelling Area One" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-area-1" aria-label="Dwelling Area One" min="0" value="0" />
                         <span id="1-area-1-sqft">sq ft &times; 2 VA &times;</span>
-                        <input type="number" id="1-area-1-cnt" aria-label="Dwelling Area One Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-area-1-cnt" aria-label="Dwelling Area One Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -33,9 +33,9 @@
                 </div>
                 <div class="row">
                     <span>
-                        <input type="number" id="1-area-2" aria-label="Dwelling Area Two" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-area-2" aria-label="Dwelling Area Two" min="0" value="0" />
                         <span id="1-area-2-sqft">sq ft &times; 2 VA &times;</span>
-                        <input type="number" id="1-area-2-cnt" aria-label="Dwelling Area Two Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-area-2-cnt" aria-label="Dwelling Area Two Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -45,9 +45,9 @@
                 </div>
                 <div class="row">
                     <span>
-                        <input type="number" id="1-area-3" aria-label="Dwelling Area Three" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-area-3" aria-label="Dwelling Area Three" min="0" value="0" />
                         <span id="1-area-3-sqft">sq ft &times; 2 VA &times;</span>
-                        <input type="number" id="1-area-3-cnt" aria-label="Dwelling Area Three Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-area-3-cnt" aria-label="Dwelling Area Three Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -58,12 +58,12 @@
                 <p class="subsection">Small Appliances: <em id="1-article-2">120.52(A)</em></p>
                 <div class="row">
                     <span>
-                        <input type="number" id="1-small-app-va" aria-label="Small Appliances Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-small-app-va" aria-label="Small Appliances Load" min="0" value="0" />
                         <span>VA &times;</span>
-                        <input type="number" id="1-small-app-circuits" aria-label="Small Appliances Circuits" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-small-app-circuits" aria-label="Small Appliances Circuits" min="0" value="0" />
                         <span>circuits</span>
                         <br><span>&times;</span>
-                        <input type="number" id="1-small-app-cnt" aria-label="Small Appliance Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-small-app-cnt" aria-label="Small Appliance Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -74,9 +74,9 @@
                 <p class="subsection">Laundry: <em id="1-article-3">120.52(B)</em></p>
                 <div class="row">
                     <span>
-                        <input type="number" id="1-laundry-va" aria-label="Laundry Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-laundry-va" aria-label="Laundry Load" min="0" value="0" />
                         <span>VA &times; 1 &times;</span>
-                        <input type="number" id="1-laundry-cnt" aria-label="Laundry Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="1-laundry-cnt" aria-label="Laundry Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -156,78 +156,78 @@
                     <span>
                         <p class="w-long">Dishwasher</p>
                         <span>=</span>
-                        <input type="number" id="2-dishwasher-va" aria-label="Dishwasher Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-dishwasher-va" aria-label="Dishwasher Load" min="0" value="0" />
                         <span>VA</span>
                     </span>
                     <span>
                         <p class="column-header-neutral">Neutral</p>
-                        <input type="checkbox" id="2-dishwasher-neutral" aria-label="Dishwasher Neutral" />
+                        <input autocomplete="off" type="checkbox" id="2-dishwasher-neutral" aria-label="Dishwasher Neutral" />
                     </span>
                 </div>
                 <div class="row">
                     <span>
                         <p class="w-long">Disposer</p>
                         <span>=</span>
-                        <input type="number" id="2-disposer-va" aria-label="Disposer Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-disposer-va" aria-label="Disposer Load" min="0" value="0" />
                         <span>VA</span>
                     </span>
                     <span>
-                        <input type="checkbox" id="2-disposer-neutral" aria-label="Disposer Neutral" />
+                        <input autocomplete="off" type="checkbox" id="2-disposer-neutral" aria-label="Disposer Neutral" />
                     </span>
                 </div>
                 <div class="row">
                     <span>
                         <p class="w-long">Compactor</p>
                         <span>=</span>
-                        <input type="number" id="2-compactor-va" aria-label="Compactor Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-compactor-va" aria-label="Compactor Load" min="0" value="0" />
                         <span>VA</span>
                     </span>
                     <span>
-                        <input type="checkbox" id="2-compactor-neutral" aria-label="Compactor Neutral" />
+                        <input autocomplete="off" type="checkbox" id="2-compactor-neutral" aria-label="Compactor Neutral" />
                     </span>
                 </div>
                 <div class="row">
                     <span>
                         <p class="w-long">Water Heater</p>
                         <span>=</span>
-                        <input type="number" id="2-water-heater-va" aria-label="Water Heater Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-water-heater-va" aria-label="Water Heater Load" min="0" value="0" />
                         <span>VA</span>
                     </span>
                     <span>
-                        <input type="checkbox" id="2-water-heater-neutral" aria-label="Water Heater Neutral" />
+                        <input autocomplete="off" type="checkbox" id="2-water-heater-neutral" aria-label="Water Heater Neutral" />
                     </span>
                 </div>
                 <div class="row">
                     <span>
-                        <input type="text" id="2-cust-app-1-name" aria-label="Custom Appliance 1 Name" value="" />
+                        <input autocomplete="off" type="text" id="2-cust-app-1-name" aria-label="Custom Appliance 1 Name" value="" />
                         <span>=</span>
-                        <input type="number" id="2-cust-app-1-va" aria-label="Custom Appliance 1 Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-cust-app-1-va" aria-label="Custom Appliance 1 Load" min="0" value="0" />
                         <span>VA</span>
                     </span>
                     <span>
-                        <input type="checkbox" id="2-cust-app-1-neutral" aria-label="Custom Appliance 1 Neutral" />
+                        <input autocomplete="off" type="checkbox" id="2-cust-app-1-neutral" aria-label="Custom Appliance 1 Neutral" />
                     </span>
                 </div>
                 <div class="row">
                     <span>
-                        <input type="text" id="2-cust-app-2-name" aria-label="Custom Appliance 2 Name" value="" />
+                        <input autocomplete="off" type="text" id="2-cust-app-2-name" aria-label="Custom Appliance 2 Name" value="" />
                         <span>=</span>
-                        <input type="number" id="2-cust-app-2-va" aria-label="Custom Appliance 2 Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-cust-app-2-va" aria-label="Custom Appliance 2 Load" min="0" value="0" />
                         <span>VA</span>
                     </span>
                     <span>
-                        <input type="checkbox" id="2-cust-app-2-neutral" aria-label="Custom Appliance 2 Neutral" />
+                        <input autocomplete="off" type="checkbox" id="2-cust-app-2-neutral" aria-label="Custom Appliance 2 Neutral" />
                     </span>
                 </div>
                 <div class="row">
                     <span>
-                        <input type="text" id="2-cust-app-3-name" aria-label="Custom Appliance 3 Name" value="" />
+                        <input autocomplete="off" type="text" id="2-cust-app-3-name" aria-label="Custom Appliance 3 Name" value="" />
                         <span>=</span>
-                        <input type="number" id="2-cust-app-3-va" aria-label="Custom Appliance 3 Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-cust-app-3-va" aria-label="Custom Appliance 3 Load" min="0" value="0" />
                         <span>VA</span>
                     </span>
                     <span>
-                        <input type="checkbox" id="2-cust-app-3-neutral" aria-label="Custom Appliance 3 Neutral" />
+                        <input autocomplete="off" type="checkbox" id="2-cust-app-3-neutral" aria-label="Custom Appliance 3 Neutral" />
                     </span>
                 </div>
                 <div class="row">
@@ -236,7 +236,7 @@
                         <p class="sr-only">Phase Total</p>
                         <br><span class="output" role="textbox" id="2-total-phases-out" aria-label="Total Phases Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA &times;</span>
-                        <input type="number" id="2-total-phases-cnt" aria-label="Total Phases Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-total-phases-cnt" aria-label="Total Phases Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -249,7 +249,7 @@
                         <p class="bold w-long">N Total</p>
                         <br><span class="output" role="textbox" id="2-total-neutral-out" aria-label="Total Neutral Load Output" readonly aria-readonly="true" tabindex="0"></span>
                         <span>VA (derated) &times;</span>
-                        <input type="number" id="2-total-neutral-cnt" aria-label="Total Neutral Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="2-total-neutral-cnt" aria-label="Total Neutral Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -275,11 +275,11 @@
             <div>
                 <div class="row">
                     <span>
-                        <input type="number" id="3-dryer-va" aria-label="Dryer Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="3-dryer-va" aria-label="Dryer Load" min="0" value="0" />
                         <span>VA &times;</span>
-                        <input type="number" id="3-dryer-percent" aria-label="Dryer Load Percentage" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="3-dryer-percent" aria-label="Dryer Load Percentage" min="0" value="0" />
                         <span>% &times;</span>
-                        <input type="number" id="3-dryer-cnt" aria-label="Dryer Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="3-dryer-cnt" aria-label="Dryer Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -306,11 +306,11 @@
                 <div class="row">
                     <span>
                         <span>Col A</span>
-                        <br><input type="number" id="4-col-a-va" aria-label="Cooking Equipment Col A Load" min="0" value="0" />
+                        <br><input autocomplete="off" type="number" id="4-col-a-va" aria-label="Cooking Equipment Col A Load" min="0" value="0" />
                         <span>VA &times;</span>
-                        <input type="number" id="4-col-a-num" aria-label="Cooking Equipment Col A Load Percentage" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="4-col-a-num" aria-label="Cooking Equipment Col A Load Percentage" min="0" value="0" />
                         <span>% &times;</span>
-                        <input type="number" id="4-col-a-cnt" aria-label="Cooking Equipment Col A Load Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="4-col-a-cnt" aria-label="Cooking Equipment Col A Load Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -321,11 +321,11 @@
                 <div class="row">
                     <span>
                         <span>Col B</span>
-                        <br><input type="number" id="4-col-b-va" aria-label="Cooking Equipment Col B Load" min="0" value="0" />
+                        <br><input autocomplete="off" type="number" id="4-col-b-va" aria-label="Cooking Equipment Col B Load" min="0" value="0" />
                         <span>VA &times;</span>
-                        <input type="number" id="4-col-b-num" aria-label="Cooking Equipment Col B Load Percentage" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="4-col-b-num" aria-label="Cooking Equipment Col B Load Percentage" min="0" value="0" />
                         <span>% &times;</span>
-                        <input type="number" id="4-col-b-cnt" aria-label="Cooking Equipment Col B Load Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="4-col-b-cnt" aria-label="Cooking Equipment Col B Load Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -336,11 +336,11 @@
                 <div class="row">
                     <span>
                         <span>Col C</span>
-                        <br><input type="number" id="4-col-c-va" aria-label="Cooking Equipment Col C Load" min="0" value="0" />
+                        <br><input autocomplete="off" type="number" id="4-col-c-va" aria-label="Cooking Equipment Col C Load" min="0" value="0" />
                         <span>VA &times;</span>
-                        <input type="number" id="4-col-c-num" aria-label="Cooking Equipment Col C Load Percentage" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="4-col-c-num" aria-label="Cooking Equipment Col C Load Percentage" min="0" value="0" />
                         <span>% &times;</span>
-                        <input type="number" id="4-col-c-cnt" aria-label="Cooking Equipment Col C Load Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="4-col-c-cnt" aria-label="Cooking Equipment Col C Load Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -376,9 +376,9 @@
                 <div class="row">
                     <span>
                         <p class="w-long">Heating Unit</p>
-                        <br><input type="number" id="5-heating-unit-va" aria-label="Heating Unit Load" min="0" value="0" />
+                        <br><input autocomplete="off" type="number" id="5-heating-unit-va" aria-label="Heating Unit Load" min="0" value="0" />
                         <span>VA &times; 100% &times;</span>
-                        <input type="number" id="5-heating-unit-cnt" aria-label="Heating Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="5-heating-unit-cnt" aria-label="Heating Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -390,9 +390,9 @@
                     <span>
                         <p class="w-long" aria-hidden="true">A/C Unit</p>
                         <p class="sr-only">AC Unit</p>
-                        <br><input type="number" id="5-ac-unit-va" aria-label="AC Unit Load" min="0" value="0" />
+                        <br><input autocomplete="off" type="number" id="5-ac-unit-va" aria-label="AC Unit Load" min="0" value="0" />
                         <span>VA &times; 100% &times;</span>
-                        <input type="number" id="5-ac-unit-cnt" aria-label="AC Unit Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="5-ac-unit-cnt" aria-label="AC Unit Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -403,9 +403,9 @@
                 <div class="row">
                     <span>
                         <p class="w-long">Heat Pump</p>
-                        <br><input type="number" id="5-heat-pump-va" aria-label="Heat Pump Load" min="0" value="0" />
+                        <br><input autocomplete="off" type="number" id="5-heat-pump-va" aria-label="Heat Pump Load" min="0" value="0" />
                         <span>VA &times; 100% &times;</span>
-                        <input type="number" id="5-heat-pump-cnt" aria-label="Heat Pump Count" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="5-heat-pump-cnt" aria-label="Heat Pump Count" min="0" value="0" />
                         <span>units =</span>
                     </span>
                     <span>
@@ -442,7 +442,7 @@
                     <span>
                         <span aria-hidden="true">&Phi;</span>
                         <span class="sr-only">Phases</span>
-                        <input type="number" id="6-phases-va" aria-label="Largest Motor Phases Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="6-phases-va" aria-label="Largest Motor Phases Load" min="0" value="0" />
                         <span>VA &times; 25% =</span>
                     </span>
                     <span>
@@ -456,7 +456,7 @@
                     <span>
                         <span aria-hidden="true">N</span>
                         <span class="sr-only">Neutral</span>
-                        <input type="number" id="6-neutral-va" aria-label="Largest Motor Neutral Load" min="0" value="0" />
+                        <input autocomplete="off" type="number" id="6-neutral-va" aria-label="Largest Motor Neutral Load" min="0" value="0" />
                         <span>VA &times; 25% =</span>
                     </span>
                     <span>
@@ -483,7 +483,7 @@
                 <div class="row">
                     <span>
                         <span>Service Voltage =</span>
-                        <input type="number" id="7-service-voltage" aria-label="Service Voltage" min="1" value="240" />
+                        <input autocomplete="off" type="number" id="7-service-voltage" aria-label="Service Voltage" min="1" value="240" />
                         <span>V</span>
                     </span>
                     <span></span>
@@ -501,12 +501,12 @@
                 <div class="row">
                     <span>
                         <span>Service Phases:</span>
-                        <input type="radio" id="7-service-phase-1" name="7-service-phase" aria-label="Single phase service" value="1" />
+                        <input autocomplete="off" type="radio" id="7-service-phase-1" name="7-service-phase" aria-label="Single phase service" value="1" />
                         <label for="7-service-phase-1">
                             <span aria-hidden="true">1&Phi; Service</span>
                             <span class="sr-only">1 Phase Service</span>
                         </label>
-                        <input type="radio" id="7-service-phase-3" name="7-service-phase" aria-label="Three phase service" value="3" checked />
+                        <input autocomplete="off" type="radio" id="7-service-phase-3" name="7-service-phase" aria-label="Three phase service" value="3" checked />
                         <label for="7-service-phase-3">
                             <span aria-hidden="true">3&Phi; Service</span>
                             <span class="sr-only">3 Phase Service</span>

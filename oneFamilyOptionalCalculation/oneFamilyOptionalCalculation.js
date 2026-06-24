@@ -152,7 +152,7 @@ function runCalc() {
     el_4_total_out.innerHTML = parseInt(el_4_gen_va.value) + parseInt(el_4_fixed_app_va.value) + parseInt(el_4_dryer_va.value) + parseInt(el_4_cooking_va.value) + parseInt(el_4_compactor_va.value) + parseInt(el_4_water_heater_va.value);
     el_4_neutral_out.innerHTML = el_4_total_out.innerHTML;
 
-    el_5_service_voltage.innerHTML = parseInt(el_5_service_voltage.value) >= 1 ? parseInt(el_5_service_voltage.value) : 1;
+    el_5_service_voltage.value = parseInt(el_5_service_voltage.value) >= 1 ? parseInt(el_5_service_voltage.value) : 1;
     el_5_phases_va.innerHTML = el_3_phases_out.innerHTML;
     el_5_phases_v.innerHTML = el_5_service_voltage.value;
     el_5_phases_a_out.innerHTML = (parseInt(el_5_phases_va.innerHTML) / (parseInt(el_5_phases_v.innerHTML))).toFixed(1);
